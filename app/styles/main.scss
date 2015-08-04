@@ -135,7 +135,7 @@ section {
 .title-block {
   display: inline-block;
   background: white;
-  padding: 10px 15px;
+  padding: 12px 15px 10px;
   text-transform: uppercase;
   letter-spacing: 2px;
   font: $subhead;
@@ -157,7 +157,6 @@ section {
 
 
 // Home
-
 .intro {
   background: #CCC url(../img/intro.jpg) 0 0 no-repeat;
   background-size: cover;
@@ -177,9 +176,45 @@ section {
 }
 
 .design {
-  background: #999;
-  h2, p {
+  background: #8d8e89 url(../img/design.jpg) center right no-repeat;
+  background-size: 60%;
+  min-height: 100%;
+  h2 {
+    font-size: 46px;
+    line-height: 50px;
+    margin-bottom: 50px;
     color: white;
+  }
+  p {
+    padding-right: 120px;
+    color: white;
+  }
+  .videolink {
+    position: relative;
+    width: 200px;
+    height: 120px;
+    margin-top: 40px;
+    img {
+      transition: all ease .3s;
+    }
+    .icon-playbutton {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 100px;
+      color: white;
+      transition: all ease .3s;
+    }
+    &:hover {
+      cursor: pointer;
+      img {
+        opacity: .4;
+      }
+      .icon-playbutton {
+        transform: translate(-50%, -50%) scale(1.2) ;
+      }
+    }
   }
 }
 
