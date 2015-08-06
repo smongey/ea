@@ -55,6 +55,7 @@
 * { margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
 .hide { display: none !important; }
 
+::selection { background: #ccc; } 
 
 $subhead: 12px/12px "Brown", Helvetica, sans-serif;
 
@@ -91,6 +92,11 @@ body, h1, h2, h3, h4, h5, h6 {
     letter-spacing: 1.5px;
     color: white;
     position: relative;
+    transition: all ease .3s;
+  }
+  li a:hover::after {
+    opacity: 1;
+    bottom: -5px;
   }
   li a::after {
     content: ' ';
@@ -103,7 +109,8 @@ body, h1, h2, h3, h4, h5, h6 {
     opacity: 0;
     transition: all ease .3s;
   }
-  li.active a::after {
+
+  li.active a::after, li.active a::after {
     opacity: 1;
     bottom: -5px;
   }
@@ -112,6 +119,11 @@ body, h1, h2, h3, h4, h5, h6 {
     font-family: 'icomoon';
     font-size: 26px;
     line-height: 20px;
+    opacity: 1;
+    transition: all ease .3s;
+    &:hover {
+      opacity:.5;
+    }
   }
 }
 
@@ -142,6 +154,10 @@ section {
   margin-bottom: 50px;
 
   .the-chair & {
+    border: 1px solid #ccc;
+    color: #999;
+  }
+  .supporters & {
     border: 1px solid #ccc;
     color: #999;
   }
@@ -194,6 +210,7 @@ section {
     width: 200px;
     height: 120px;
     margin-top: 40px;
+    background: #ccc;
     img {
       transition: all ease .3s;
     }
@@ -219,13 +236,72 @@ section {
 }
 
 .the-chair {
+  min-height: 90%;
+  .features {
+    position: relative;
+    background: grey;
+    height: 600px;
+  }
   p {
+    padding-right: 50px;
     color: #999;
   }
+
+  .one, .two, .three {
+    position: absolute;
+    span {
+      position: absolute;
+      display: block;
+      width: 30px;
+      height: 30px;
+      background: black;
+      color: white;
+      border-radius: 100%;
+      text-align: center;
+      padding-top: 5px;
+      z-index: 1;
+      &::after, &::before {
+        content: ''; 
+      }
+
+    }
+
+    p {
+      display: block;
+      width: 200px;
+      height: inherit;
+      padding: 10px 20px 10px 12px;
+      background: #e6e6e6;
+      color: black;
+      position: absolute;
+      right: -15px;
+      margin-top: -45px;
+      opacity: 0;
+      transition: all ease .3s;
+    }
+    &:hover {
+      p {
+        opacity: 1;
+      }
+    }
+  }
+
+  .one { left: 30%; top: 20%; }
+  .two { left: 65%; top: 45%; }
+  .three { left: 40%; top: 60%; }
+
+
+  .one p {  }
+  .two p {  }
+  .three p {  }
+
+
+
 }
 
 
 .kickstarter {
+  min-height: 90%;
   background: black;
   h2, p, a {
     color: white;
@@ -233,6 +309,7 @@ section {
 }
 
 .supporters {
+  min-height: 70%;
 
 }
 
@@ -248,14 +325,114 @@ footer {
   padding: 60px 0;
   background: #e6e6e6;
   
+  p {
+    color: black;
+    a {
+      position: relative;
+      color: black;
+      &:hover {
+        color:black;
+
+      }
+      &::after {
+        background: black;
+        content: ' ';
+        left: 0px;
+        bottom: 0px;
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        background: white;
+        opacity: 0;
+        transition: all ease .3s;
+      }
+      &:hover::after {
+        bottom: -10px;
+        opacity: 1;
+
+      }
+    }
+  }
+
   .social li a {
     display: block;
     background: white;
-    width: 25px;
-    height: 25px;
+    width: 26px;
+    height: 26px;
     text-align: center;
     border-radius: 50%;
+    font-family: 'icomoon';
+    font-size: 26px;
+    line-height: 20px;
+    opacity: 1;
+    color: black;
+    transition: all ease .3s;
+    &:hover {
+      background: black;
+      color: white;
+    }
   }
+  .credit {
+    color: black;
+    position: relative;
+    &::after {
+      content: '';
+      left: 0px;
+      bottom: 0px;
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      background: white;
+      opacity: 0;
+      transition: all ease .3s;
+    }
+    &:hover::after {
+      bottom: -10px;
+      opacity: 1;
+
+    }
+  }
+
+  .icon-logo {
+    color: black;
+    font-size: 70px;
+    line-height: 25px;
+  }
+
+  input[type="text"], input[type="submit"] {
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 0;
+    border-bottom: 2px solid black;
+    float: left;
+    width: 70%;
+    padding: 12px 0 10px 0;
+    height: 44px;
+    font: 16px/20px "Brown", sans-serif;
+    &:focus {
+      background: transparent;
+      border-color: black; 
+      color: black; 
+    }
+    &::placeholder {
+      color: black;
+    }
+  }
+
+  input[type="submit"] {
+    width: 30%;
+    border-left: 2px solid black;
+    transition: all ease .3s;
+    &:hover {
+      background: black;
+      color: white;
+      cursor: pointer;
+    }
+  }
+
+  
 }
 
 
