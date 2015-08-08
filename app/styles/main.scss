@@ -178,6 +178,7 @@ section {
   background-size: cover;
   min-height: 100%;
   padding: 40vh 0 0 0;
+  overflow: hidden;
   h2 {
     font-size: 50px;
     line-height: 60px;
@@ -195,6 +196,7 @@ section {
   background: #8d8e89 url(../img/design.jpg) center right no-repeat;
   background-size: 60%;
   min-height: 100%;
+  padding-top: 12vh;
   h2 {
     font-size: 46px;
     line-height: 50px;
@@ -207,11 +209,11 @@ section {
   }
   .videolink {
     position: relative;
-    width: 200px;
-    height: 120px;
+    width: 150px;
+    height: 90px;
     margin-top: 40px;
-    background: #ccc;
     img {
+      opacity: .4;
       transition: all ease .3s;
     }
     .icon-playbutton {
@@ -226,10 +228,11 @@ section {
     &:hover {
       cursor: pointer;
       img {
-        opacity: .4;
+        opacity: 1;
       }
       .icon-playbutton {
-        transform: translate(-50%, -50%) scale(1.2) ;
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0;
       }
     }
   }
@@ -237,10 +240,13 @@ section {
 
 .the-chair {
   min-height: 90%;
+  padding-top: 12vh;
   .features {
+    padding: 5%;
     position: relative;
-    background: grey;
+    // background: grey;
     height: 600px;
+    min-width: 500px;
   }
   p {
     padding-right: 50px;
@@ -301,23 +307,118 @@ section {
 
 
 .kickstarter {
-  min-height: 90%;
+  min-height: 70%;
   background: black;
+  padding-top: 10vh;
   h2, p, a {
     color: white;
+  }
+  h2 span {
+    color: grey;
+  }
+}
+
+.kickstartervideo {
+  position: relative;
+  margin-top: 20px;
+  img {
+    opacity: .4;
+    transition: all ease .3s;
+  }
+  .icon-playbutton {
+    position: absolute;
+    font-size: 140px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all ease .3s;
+  }
+  &:hover {
+    img {
+      opacity: .8;
+    }
+    .icon-playbutton {
+      opacity: 0;
+    }
   }
 }
 
 .supporters {
-  min-height: 70%;
-
+  min-height: 60%;
+  padding-top: 12vh;
+  p { 
+    padding-right: 60px;
+  }
+  .medium-block-grid-3 {
+    margin-top: 20px;
+    li:nth-child(4) {
+      margin-left: 100px;
+    }
+  }
 }
 
-
-
-
-
-
+.overlay, .overlaytwo {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  background: rgba(0,0,0,.9);
+  pointer-events: auto;
+  transition: all ease .3s;
+  transform: scale(1);
+  &.inactive {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1.1) translateY(-2%);
+  }
+  iframe {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 800px;
+    width: 100%;
+  }
+  .close {
+    position: absolute;
+    display: block;
+    top: 5%;
+    right: 5%;
+    width: 30px;
+    height: 30px;
+    z-index: 9999;
+    cursor: pointer;
+      transition: all ease .3s;
+    &:after, &:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background: white;
+      top: 50%;
+      left: 0%;
+      transform-origin: 50% 50%;
+      transform: rotate(45deg);
+      transition: all ease .3s;
+    }
+    &:before {
+      transform: rotate(135deg);
+    }
+    &:hover {
+      &:after {
+        transform: rotate(45deg) scaleY(3);
+        transition: all ease .3s;
+      }
+      &:before {
+        transform: rotate(135deg) scaleY(3);
+        transition: all ease .3s;
+      }
+    }
+  }
+}
 
 
 // Footer

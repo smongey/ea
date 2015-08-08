@@ -11,8 +11,39 @@ $(document).foundation({
 });
 
 $(document).ready(function(){
-	
+
 });
+
+
+
+$('.videolink').on('click', function(){
+	
+	$('.overlay').removeClass('inactive');
+
+});
+
+$('.kickstartervideo').on('click', function(e){
+	e.preventDefault();
+	$('.overlaytwo').removeClass('inactive');
+
+});
+
+
+
+$('.close').on('click', function(e){
+
+
+	var vimeoWrap = $('.vimeowrap');
+	vimeoWrap.html(vimeoWrap.html());
+
+	var vimeoWrapTwo = $('.vimeowraptwo');
+	vimeoWrapTwo.html(vimeoWrapTwo.html());
+
+	$('.overlay, .overlaytwo').addClass('inactive');
+
+});
+
+
 
 var introHeight = $(window).height();
 
@@ -23,4 +54,19 @@ $(window).on('scroll', function(e){
 	} else {
 		$('.contain-to-grid.fixed').removeClass('active');
 	}
+	var offset = current;
+	var opacOffset = 1 - offset / 1000;
+
+	$('.intro div.medium-5').css({
+		'transform': 'translateY(' + offset / 2 + 'px)',
+		'opacity': opacOffset 
+	});
+	
+	//console.log( 'a' );
+
+	$('.intro div.medium-7').css({
+		'transform': 'translateY(' + offset / 1.5 + 'px)',
+		'opacity': opacOffset
+	});
+
 });
