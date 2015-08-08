@@ -1,5 +1,6 @@
 /*global -$ */
 'use strict';
+
 // generated on 2015-06-08 using generator-gulp-webapp 0.3.0
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
@@ -28,7 +29,7 @@ gulp.task('fileinclude', function () {
         .pipe($.fileInclude())
         .pipe($.size())
         .pipe(gulp.dest('.tmp'));
-})
+});
 
 gulp.task('jshint', function () {
   return gulp.src('app/scripts/**/*.js')
@@ -127,7 +128,7 @@ gulp.task('wiredep', function () {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['jshint', 'html', 'images', 'fonts', 'fileinclude', 'extras'], function () {
+gulp.task('build', ['html', 'images', 'fonts', 'fileinclude', 'extras'], function () {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 

@@ -1,6 +1,8 @@
+'use strict';
+
 /* jshint devel:true */
 $(document).foundation({
-"magellan-expedition": {
+'magellan-expedition': {
   active_class: 'active',
   threshold: 0, // how many pixels until the magellan bar sticks, 0 = auto
   destination_threshold: 10, // pixels from the top of destination for it to be considered active
@@ -30,7 +32,7 @@ $('.kickstartervideo').on('click', function(e){
 
 
 
-$('.close').on('click', function(e){
+$('.close').on('click', function(){
 
 
 	var vimeoWrap = $('.vimeowrap');
