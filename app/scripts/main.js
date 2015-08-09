@@ -46,7 +46,7 @@ var introHeight = $(window).height();
 
 $(window).on('scroll', function(e){
 	var current = e.currentTarget.pageYOffset;
-	if (current > introHeight - 80) {
+	if (current > introHeight - 120) {
 		$('.contain-to-grid.fixed').addClass('active');
 	} else {
 		$('.contain-to-grid.fixed').removeClass('active');
