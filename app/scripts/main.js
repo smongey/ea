@@ -12,11 +12,6 @@ $(document).foundation({
 }
 });
 
-$(document).ready(function(){
-
-});
-
-
 
 $('.videolink').on('click', function(){
 	
@@ -63,6 +58,10 @@ $(window).on('scroll', function(e){
 		'transform': 'translateY(' + offset / 2 + 'px)',
 		'opacity': opacOffset 
 	});
+
+	$('.bgimage').css({
+		'opacity': opacOffset 
+	})
 	
 	//console.log( 'a' );
 

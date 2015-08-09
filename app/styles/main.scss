@@ -174,11 +174,25 @@ section {
 
 // Home
 .intro {
-  background: #CCC url(../img/intro.jpg) 0 0 no-repeat;
-  background-size: cover;
+  background: #000;
   min-height: 100%;
   padding: 40vh 0 0 0;
   overflow: hidden;
+  position: relative;
+
+  .bgimage {
+    background: url(../img/intro.jpg) 0 0 no-repeat;
+    background-size: cover;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: 0;
+  }
+
+
   h2 {
     font-size: 50px;
     line-height: 60px;
