@@ -448,6 +448,54 @@ section {
   }
 }
 
+.loader {
+  position: fixed;
+  background: rgba(0,0,0,.8);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  transition: all ease 1s;
+  .dot  {
+    display: block;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 100%;
+    left: 50%;
+    top: 50%;
+    margin-left: -10px;
+    margin-top: -10px; 
+    -webkit-animation: radiate 1s infinite;
+    -moz-animation: radiate 1s infinite;
+    -o-animation: radiate 1s infinite;
+    animation: radiate 1s infinite;
+  }
+  &.disable {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+@-webkit-keyframes radiate {
+  0% { opacity: 1; transform: scale(.75); }
+  100% { opacity: 0; transform: scale(2); }
+}
+@-moz-keyframes radiate {
+  0% { opacity: 1; transform: scale(.75); }
+  100% { opacity: 0; transform: scale(2); }
+}
+@-o-keyframes radiate {
+  0% { opacity: 1; transform: scale(.75); }
+  100% { opacity: 0; transform: scale(2); }
+}
+@keyframes radiate {
+  0% { opacity: 1; transform: scale(.75); }
+  100% { opacity: 0; transform: scale(2); }
+}
+
 
 // Footer
 footer {

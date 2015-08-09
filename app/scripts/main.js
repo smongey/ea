@@ -71,3 +71,7 @@ $(window).on('scroll', function(e){
 	});
 
 });
+
+$(window).load( function(){
+	$('.loader').addClass('disable');
+});
