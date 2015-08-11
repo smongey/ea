@@ -39,7 +39,7 @@
     font-style: normal;
 }
 
-
+// $phone: only screen and (max-width: 40em);
 
 .icon-facebook:before {
   content: "\e600";
@@ -71,12 +71,11 @@
 
 ::selection { background: #ccc; } 
 
-$subhead: 12px/12px "llb", Helvetica, sans-serif;
+$subhead: 12px/18px "llb", Helvetica, sans-serif;
 
-$nav-type: 12px/12px "llb", Helvetica, sans-serif;
+$nav-type: 12px/18px "llb", Helvetica, sans-serif;
 
 $family: "llb", Helvetica, sans-serif;
-
 
 
 body, h1, h2, h3, h4, h5, h6 {
@@ -89,16 +88,21 @@ body, h1, h2, h3, h4, h5, h6 {
   background: transparent;
   // background: black;
   padding-top: 30px;
-  transition: all ease .3s;
+  transition: all ease .3s; 
   &.active {
     padding: 0 0 5px 0;
     background: black;
   }
 }
 
+
+
 .top-bar {
 
   margin-top: 20px;
+  @media only screen and (max-width: 40em) {
+    display: none;
+  }
 
   li a {
     font: $nav-type;
@@ -107,6 +111,11 @@ body, h1, h2, h3, h4, h5, h6 {
     color: white;
     position: relative;
     transition: all ease .3s;
+    @media only screen and (max-width: 40em) {
+      font-size: 20px;
+      line-height: 36px;
+      text-transform: inherit;
+    }
   }
   li a:hover::after {
     opacity: 1;
@@ -129,14 +138,20 @@ body, h1, h2, h3, h4, h5, h6 {
     bottom: -5px;
   }
 
-  .social li a {
-    font-family: 'icomoon';
-    font-size: 26px;
-    line-height: 20px;
-    opacity: 1;
-    transition: all ease .3s;
-    &:hover {
-      opacity:.5;
+  .social  {
+    li {
+      a {
+        font-family: 'icomoon';
+        font-size: 26px;
+        line-height: 20px;
+        opacity: 1;
+        transition: all ease .3s;
+        di
+        &:hover {
+          opacity:.5;
+        }
+      }
+
     }
   }
 }
@@ -148,6 +163,11 @@ body, h1, h2, h3, h4, h5, h6 {
 section {
 
   padding: 60px 0;
+  
+  @media only screen and (max-width: 40em) {
+    padding: 40px 0;
+  }  
+
 
   .medium-5 {
     h2 {
@@ -204,20 +224,41 @@ section {
     right: 0;
     position: absolute;
     z-index: 0;
+    @media only screen and (max-width: 40em) {
+      background-position: 30%;
+    }
   }
 
 
-  h2 {
-    font-size: 50px;
-    line-height: 60px;
-    color: white;
-  }
   h1 {
     font-size: 110px;
     color: white;
     display: inline;
     line-height: 80px;
+    @media only screen and (max-width: 40em) {
+      font-size: 90px;
+      line-height: 0px;
+    }
   }
+
+  h2 {
+    font-size: 50px;
+    line-height: 60px;
+    color: white;
+    @media only screen and (max-width: 40em) {
+      font-size: 36px;
+      line-height: 46px;
+    }
+  }
+  
+  .row {
+     @media only screen and (max-width: 40em) {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+     }
+  }
+
 }
 
 .design {
@@ -225,15 +266,27 @@ section {
   background-size: 60%;
   min-height: 100%;
   padding-top: 12vh;
+  @media only screen and (max-width: 40em) {
+    padding-top: 30px;
+    background-size: 100%;
+  }
   h2 {
     font-size: 46px;
     line-height: 50px;
     margin-bottom: 50px;
     color: white;
+    @media only screen and (max-width: 40em) {
+      font-size: 28px;
+      line-height: 36px;
+    }
   }
   p {
     padding-right: 120px;
     color: white;
+
+    @media only screen and (max-width: 40em) {
+      padding-right: 0px;
+    }
   }
   .videolink {
     position: relative;
@@ -269,20 +322,36 @@ section {
 .the-chair {
   min-height: 90%;
   padding-top: 12vh;
+  @media only screen and (max-width: 40em) {
+    padding-top: 30px;
+  }
   .features {
     padding: 5%;
     position: relative;
     // background: grey;
     height: 600px;
     min-width: 500px;
+    @media only screen and (max-width: 40em) {
+      padding: 0;
+      min-width: inherit;
+      height: inherit;
+    }
   }
   p {
     padding-right: 50px;
     color: #999;
+
+    @media only screen and (max-width: 40em) {
+      padding-right: 0px;
+    }
   }
 
   .one, .two, .three {
     position: absolute;
+
+    @media only screen and (max-width: 40em) {
+      display: none;
+    }
     span {
       position: absolute;
       display: block;
@@ -338,6 +407,9 @@ section {
   min-height: 70%;
   background: black;
   padding-top: 10vh;
+  @media only screen and (max-width: 40em) {
+    padding-top: 30px;
+  }
   h2, p, a {
     color: white;
   }
@@ -374,13 +446,23 @@ section {
 .supporters {
   min-height: 60%;
   padding-top: 12vh;
+  @media only screen and (max-width: 40em) {
+    padding-top: 30px;
+  }
   p { 
     padding-right: 60px;
+    @media only screen and (max-width: 40em) {
+      padding-right: 0px;
+    }
   }
   .medium-block-grid-3 {
     margin-top: 20px;
     li:nth-child(4) {
       margin-left: 100px;
+
+      @media only screen and (max-width: 40em) {
+        margin-left: 0px;
+      }
     }
   }
 }
@@ -531,22 +613,33 @@ footer {
     }
   }
 
-  .social li a {
-    display: block;
-    background: white;
-    width: 26px;
-    height: 26px;
-    text-align: center;
-    border-radius: 50%;
-    font-family: 'icomoon';
-    font-size: 26px;
-    line-height: 20px;
-    opacity: 1;
-    color: black;
-    transition: all ease .3s;
-    &:hover {
-      background: black;
-      color: white;
+  .social  {
+    @media only screen and (max-width: 40em) {
+      padding: 15px 0;
+    }
+    li {
+      @media only screen and (max-width: 40em) {
+        display: inline-block;
+        width: 40px;
+      } 
+    }
+    li a {
+      display: block;
+      background: white;
+      width: 26px;
+      height: 26px;
+      text-align: center;
+      border-radius: 50%;
+      font-family: 'icomoon';
+      font-size: 26px;
+      line-height: 20px;
+      opacity: 1;
+      color: black;
+      transition: all ease .3s;
+      &:hover {
+        background: black;
+        color: white;
+      }
     }
   }
   .credit {
@@ -574,6 +667,9 @@ footer {
     color: black;
     font-size: 70px;
     line-height: 25px;
+    @media only screen and (max-width: 40em) {
+      margin-left: -5px;
+    }
   }
 
   input[type="text"], input[type="email"], input[type="submit"] {
