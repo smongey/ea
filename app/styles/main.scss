@@ -6,9 +6,9 @@
   font-family: 'icomoon';
   src:url('../fonts/icomoon.eot');
   src:url('../fonts/icomoon.eot') format('embedded-opentype'),
-    url('../fonts/icomoon.ttf') format('truetype'),
-    url('../fonts/icomoon.woff') format('woff'),
-    url('../fonts/icomoon.svg') format('svg');
+	url('../fonts/icomoon.ttf') format('truetype'),
+	url('../fonts/icomoon.woff') format('woff'),
+	url('../fonts/icomoon.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -27,16 +27,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+$cubic: cubic-bezier(.68,.02,.33,.99);
 
 @font-face {
-    font-family: "llb";
-    src:url("../fonts/llb.eot");
-    src:url("../fonts/llb.eot?#iefix") format("embedded-opentype"),
-        url("../fonts/llb.woff") format("woff"),
-        url("../fonts/llb.ttf") format("truetype"),
-        url("../fonts/llb.svg#lineto-brown-regular") format("svg");
-    font-weight: normal;
-    font-style: normal;
+	font-family: "llb";
+	src:url("../fonts/llb.eot");
+	src:url("../fonts/llb.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/llb.woff") format("woff"),
+		url("../fonts/llb.ttf") format("truetype"),
+		url("../fonts/llb.svg#lineto-brown-regular") format("svg");
+	font-weight: normal;
+	font-style: normal;
 }
 
 // $phone: only screen and (max-width: 40em);
@@ -90,8 +91,23 @@ body, h1, h2, h3, h4, h5, h6 {
   padding-top: 30px;
   transition: all ease .3s; 
   &.active {
-    padding: 0 0 5px 0;
-    background: black;
+	padding: 0 0 0 0;
+	background: black;
+	.header-logo {
+	  color: white;
+	}
+  }
+  .small-block-grid-4 {
+	display: flex;
+	li { flex: 1; }
+  }
+
+  .header-logo {
+	color: transparent;
+	font-size: 70px;
+	line-height: 20px;
+	transition: all ease .3s;
+	height: 30px;
   }
 }
 
@@ -101,58 +117,58 @@ body, h1, h2, h3, h4, h5, h6 {
 
   margin-top: 20px;
   @media only screen and (max-width: 40em) {
-    display: none;
+	display: none;
   }
 
   li a {
-    font: $nav-type;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: white;
-    position: relative;
-    transition: all ease .3s;
-    @media only screen and (max-width: 40em) {
-      font-size: 20px;
-      line-height: 36px;
-      text-transform: inherit;
-    }
+	font: $nav-type;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	color: white;
+	position: relative;
+	transition: all ease .3s;
+	@media only screen and (max-width: 40em) {
+	  font-size: 20px;
+	  line-height: 36px;
+	  text-transform: inherit;
+	}
   }
   li a:hover::after {
-    opacity: 1;
-    bottom: -5px;
+	opacity: 1;
+	bottom: -5px;
   }
   li a::after {
-    content: ' ';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background: white;
-    left: 0px;
-    bottom: 0px;
-    opacity: 0;
-    transition: all ease .3s;
+	content: ' ';
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	background: white;
+	left: 0px;
+	bottom: 0px;
+	opacity: 0;
+	transition: all ease .3s;
   }
 
   li.active a::after, li.active a::after {
-    opacity: 1;
-    bottom: -5px;
+	opacity: 1;
+	bottom: -5px;
   }
 
   .social  {
-    li {
-      a {
-        font-family: 'icomoon';
-        font-size: 26px;
-        line-height: 20px;
-        opacity: 1;
-        transition: all ease .3s;
-        di
-        &:hover {
-          opacity:.5;
-        }
-      }
+	li {
+	  a {
+		font-family: 'icomoon';
+		font-size: 26px;
+		line-height: 20px;
+		opacity: 1;
+		transition: all ease .3s;
+		di
+		&:hover {
+		  opacity:.5;
+		}
+	  }
 
-    }
+	}
   }
 }
 
@@ -165,15 +181,15 @@ section {
   padding: 60px 0;
   
   @media only screen and (max-width: 40em) {
-    padding: 40px 0;
+	padding: 40px 0;
   }  
 
 
   .medium-5 {
-    h2 {
-      line-height: 1em;
-      margin-bottom: 50px;
-    }
+	h2 {
+	  line-height: 1em;
+	  margin-bottom: 50px;
+	}
   }
 
 }
@@ -188,18 +204,18 @@ section {
   margin-bottom: 50px;
 
   .the-chair & {
-    border: 1px solid #ccc;
-    color: #999;
+	border: 1px solid #ccc;
+	color: #999;
   }
   .supporters & {
-    border: 1px solid #ccc;
-    color: #999;
+	border: 1px solid #ccc;
+	color: #999;
   }
   .design & {
-    color: #999;
+	color: #999;
   }
   .kickstarter & {
-    color: black;
+	color: black;
   }
 }
 
@@ -215,48 +231,48 @@ section {
   position: relative;
 
   .bgimage {
-    background: url(../img/intro.jpg) 0 0 no-repeat;
-    background-size: cover;
-    opacity: 1;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: 0;
-    @media only screen and (max-width: 40em) {
-      background-position: 30%;
-    }
+	background: url(../img/intro.jpg) 0 0 no-repeat;
+	background-size: cover;
+	opacity: 1;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: 0;
+	@media only screen and (max-width: 40em) {
+	  background-position: 30%;
+	}
   }
 
 
   h1 {
-    font-size: 110px;
-    color: white;
-    display: inline;
-    line-height: 80px;
-    @media only screen and (max-width: 40em) {
-      font-size: 90px;
-      line-height: 0px;
-    }
+	font-size: 110px;
+	color: white;
+	display: inline;
+	line-height: 80px;
+	@media only screen and (max-width: 40em) {
+	  font-size: 90px;
+	  line-height: 0px;
+	}
   }
 
   h2 {
-    font-size: 50px;
-    line-height: 60px;
-    color: white;
-    @media only screen and (max-width: 40em) {
-      font-size: 36px;
-      line-height: 46px;
-    }
+	font-size: 50px;
+	line-height: 60px;
+	color: white;
+	@media only screen and (max-width: 40em) {
+	  font-size: 36px;
+	  line-height: 46px;
+	}
   }
   
   .row {
-     @media only screen and (max-width: 40em) {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-     }
+	 @media only screen and (max-width: 40em) {
+	  position: absolute;
+	  top: 50%;
+	  transform: translateY(-50%);
+	 }
   }
 
 }
@@ -267,55 +283,55 @@ section {
   min-height: 100%;
   padding-top: 12vh;
   @media only screen and (max-width: 40em) {
-    padding-top: 30px;
-    background-size: 100%;
+	padding-top: 30px;
+	background-size: 100%;
   }
   h2 {
-    font-size: 46px;
-    line-height: 50px;
-    margin-bottom: 50px;
-    color: white;
-    @media only screen and (max-width: 40em) {
-      font-size: 28px;
-      line-height: 36px;
-    }
+	font-size: 46px;
+	line-height: 50px;
+	margin-bottom: 50px;
+	color: white;
+	@media only screen and (max-width: 40em) {
+	  font-size: 28px;
+	  line-height: 36px;
+	}
   }
   p {
-    padding-right: 120px;
-    color: white;
+	padding-right: 120px;
+	color: white;
 
-    @media only screen and (max-width: 40em) {
-      padding-right: 0px;
-    }
+	@media only screen and (max-width: 40em) {
+	  padding-right: 0px;
+	}
   }
   .videolink {
-    position: relative;
-    width: 150px;
-    height: 90px;
-    margin-top: 40px;
-    img {
-      opacity: .4;
-      transition: all ease .3s;
-    }
-    .icon-playbutton {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 100px;
-      color: white;
-      transition: all ease .3s;
-    }
-    &:hover {
-      cursor: pointer;
-      img {
-        opacity: 1;
-      }
-      .icon-playbutton {
-        transform: translate(-50%, -50%) scale(1.2);
-        opacity: 0;
-      }
-    }
+	position: relative;
+	width: 150px;
+	height: 90px;
+	margin-top: 40px;
+	img {
+	  opacity: .4;
+	  transition: all ease .3s;
+	}
+	.icon-playbutton {
+	  position: absolute;
+	  left: 50%;
+	  top: 50%;
+	  transform: translate(-50%, -50%);
+	  font-size: 100px;
+	  color: white;
+	  transition: all ease .3s;
+	}
+	&:hover {
+	  cursor: pointer;
+	  img {
+		opacity: 1;
+	  }
+	  .icon-playbutton {
+		transform: translate(-50%, -50%) scale(1.2);
+		opacity: 0;
+	  }
+	}
   }
 }
 
@@ -323,70 +339,70 @@ section {
   min-height: 90%;
   padding-top: 12vh;
   @media only screen and (max-width: 40em) {
-    padding-top: 30px;
+	padding-top: 30px;
   }
   .features {
-    padding: 5%;
-    position: relative;
-    // background: grey;
-    height: 600px;
-    min-width: 500px;
-    @media only screen and (max-width: 40em) {
-      padding: 0;
-      min-width: inherit;
-      height: inherit;
-    }
+	padding: 5%;
+	position: relative;
+	// background: grey;
+	height: 600px;
+	min-width: 500px;
+	@media only screen and (max-width: 40em) {
+	  padding: 0;
+	  min-width: inherit;
+	  height: inherit;
+	}
   }
   p {
-    padding-right: 50px;
-    color: #999;
+	padding-right: 50px;
+	color: #999;
 
-    @media only screen and (max-width: 40em) {
-      padding-right: 0px;
-    }
+	@media only screen and (max-width: 40em) {
+	  padding-right: 0px;
+	}
   }
 
   .one, .two, .three {
-    position: absolute;
+	position: absolute;
 
-    @media only screen and (max-width: 40em) {
-      display: none;
-    }
-    span {
-      position: absolute;
-      display: block;
-      width: 30px;
-      height: 30px;
-      background: black;
-      color: white;
-      border-radius: 100%;
-      text-align: center;
-      padding-top: 5px;
-      z-index: 1;
-      &::after, &::before {
-        content: ''; 
-      }
+	@media only screen and (max-width: 40em) {
+	  display: none;
+	}
+	span {
+	  position: absolute;
+	  display: block;
+	  width: 30px;
+	  height: 30px;
+	  background: black;
+	  color: white;
+	  border-radius: 100%;
+	  text-align: center;
+	  padding-top: 5px;
+	  z-index: 1;
+	  &::after, &::before {
+		content: ''; 
+	  }
 
-    }
+	}
 
-    p {
-      display: block;
-      width: 200px;
-      height: inherit;
-      padding: 10px 20px 10px 12px;
-      background: #e6e6e6;
-      color: black;
-      position: absolute;
-      right: -15px;
-      margin-top: -45px;
-      opacity: 0;
-      transition: all ease .3s;
-    }
-    &:hover {
-      p {
-        opacity: 1;
-      }
-    }
+	p {
+	  display: block;
+	  width: 200px;
+	  height: inherit;
+	  padding: 10px 20px 10px 12px;
+	  background: #e6e6e6;
+	  color: black;
+	  position: absolute;
+	  right: -15px;
+	  margin-top: -45px;
+	  opacity: 0;
+	  transition: all ease .3s;
+	}
+	&:hover {
+	  p {
+		opacity: 1;
+	  }
+	}
   }
 
   .one { left: 30%; top: 20%; }
@@ -408,13 +424,13 @@ section {
   background: black;
   padding-top: 10vh;
   @media only screen and (max-width: 40em) {
-    padding-top: 30px;
+	padding-top: 30px;
   }
   h2, p, a {
-    color: white;
+	color: white;
   }
   h2 span {
-    color: grey;
+	color: grey;
   }
 }
 
@@ -422,24 +438,24 @@ section {
   position: relative;
   margin-top: 20px;
   img {
-    opacity: .4;
-    transition: all ease .3s;
+	opacity: .4;
+	transition: all ease .3s;
   }
   .icon-playbutton {
-    position: absolute;
-    font-size: 140px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    transition: all ease .3s;
+	position: absolute;
+	font-size: 140px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	transition: all ease .3s;
   }
   &:hover {
-    img {
-      opacity: .8;
-    }
-    .icon-playbutton {
-      opacity: 0;
-    }
+	img {
+	  opacity: .8;
+	}
+	.icon-playbutton {
+	  opacity: 0;
+	}
   }
 }
 
@@ -447,23 +463,23 @@ section {
   min-height: 60%;
   padding-top: 12vh;
   @media only screen and (max-width: 40em) {
-    padding-top: 30px;
+	padding-top: 30px;
   }
   p { 
-    padding-right: 60px;
-    @media only screen and (max-width: 40em) {
-      padding-right: 0px;
-    }
+	padding-right: 60px;
+	@media only screen and (max-width: 40em) {
+	  padding-right: 0px;
+	}
   }
   .medium-block-grid-3 {
-    margin-top: 20px;
-    li:nth-child(4) {
-      margin-left: 100px;
+	margin-top: 20px;
+	li:nth-child(4) {
+	  margin-left: 100px;
 
-      @media only screen and (max-width: 40em) {
-        margin-left: 0px;
-      }
-    }
+	  @media only screen and (max-width: 40em) {
+		margin-left: 0px;
+	  }
+	}
   }
 }
 
@@ -480,53 +496,53 @@ section {
   transition: all ease .3s;
   transform: scale(1);
   &.inactive {
-    opacity: 0;
-    pointer-events: none;
-    transform: scale(1.1) translateY(-2%);
+	opacity: 0;
+	pointer-events: none;
+	transform: scale(1.1) translateY(-2%);
   }
   iframe {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 800px;
-    width: 100%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	max-width: 800px;
+	width: 100%;
   }
   .close {
-    position: absolute;
-    display: block;
-    top: 5%;
-    right: 5%;
-    width: 30px;
-    height: 30px;
-    z-index: 9999;
-    cursor: pointer;
-      transition: all ease .3s;
-    &:after, &:before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      background: white;
-      top: 50%;
-      left: 0%;
-      transform-origin: 50% 50%;
-      transform: rotate(45deg);
-      transition: all ease .3s;
-    }
-    &:before {
-      transform: rotate(135deg);
-    }
-    &:hover {
-      &:after {
-        transform: rotate(45deg) scaleY(3);
-        transition: all ease .3s;
-      }
-      &:before {
-        transform: rotate(135deg) scaleY(3);
-        transition: all ease .3s;
-      }
-    }
+	position: absolute;
+	display: block;
+	top: 5%;
+	right: 5%;
+	width: 30px;
+	height: 30px;
+	z-index: 9999;
+	cursor: pointer;
+	  transition: all ease .3s;
+	&:after, &:before {
+	  content: '';
+	  position: absolute;
+	  width: 100%;
+	  height: 2px;
+	  background: white;
+	  top: 50%;
+	  left: 0%;
+	  transform-origin: 50% 50%;
+	  transform: rotate(45deg);
+	  transition: all ease .3s;
+	}
+	&:before {
+	  transform: rotate(135deg);
+	}
+	&:hover {
+	  &:after {
+		transform: rotate(45deg) scaleY(3);
+		transition: all ease .3s;
+	  }
+	  &:before {
+		transform: rotate(135deg) scaleY(3);
+		transition: all ease .3s;
+	  }
+	}
   }
 }
 
@@ -540,24 +556,24 @@ section {
   z-index: 9999;
   transition: all ease 1s;
   .dot  {
-    display: block;
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    background: white;
-    border-radius: 100%;
-    left: 50%;
-    top: 50%;
-    margin-left: -10px;
-    margin-top: -10px; 
-    -webkit-animation: radiate 1s infinite;
-    -moz-animation: radiate 1s infinite;
-    -o-animation: radiate 1s infinite;
-    animation: radiate 1s infinite;
+	display: block;
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	background: white;
+	border-radius: 100%;
+	left: 50%;
+	top: 50%;
+	margin-left: -10px;
+	margin-top: -10px; 
+	-webkit-animation: radiate 1s infinite;
+	-moz-animation: radiate 1s infinite;
+	-o-animation: radiate 1s infinite;
+	animation: radiate 1s infinite;
   }
   &.disable {
-    opacity: 0;
-    pointer-events: none;
+	opacity: 0;
+	pointer-events: none;
   }
 }
 
@@ -585,131 +601,499 @@ footer {
   background: #e6e6e6;
   
   p {
-    color: black;
-    a {
-      position: relative;
-      color: black;
-      &:hover {
-        color:black;
+	color: black;
+	a {
+	  position: relative;
+	  color: black;
+	  &:hover {
+		color:black;
 
-      }
-      &::after {
-        background: black;
-        content: ' ';
-        left: 0px;
-        bottom: 0px;
-        position: absolute;
-        width: 100%;
-        height: 4px;
-        background: white;
-        opacity: 0;
-        transition: all ease .3s;
-      }
-      &:hover::after {
-        bottom: -10px;
-        opacity: 1;
+	  }
+	  &::after {
+		background: black;
+		content: ' ';
+		left: 0px;
+		bottom: 0px;
+		position: absolute;
+		width: 100%;
+		height: 4px;
+		background: white;
+		opacity: 0;
+		transition: all ease .3s;
+	  }
+	  &:hover::after {
+		bottom: -10px;
+		opacity: 1;
 
-      }
-    }
+	  }
+	}
   }
 
   .social  {
-    @media only screen and (max-width: 40em) {
-      padding: 15px 0;
-    }
-    li {
-      @media only screen and (max-width: 40em) {
-        display: inline-block;
-        width: 40px;
-      } 
-    }
-    li a {
-      display: block;
-      background: white;
-      width: 26px;
-      height: 26px;
-      text-align: center;
-      border-radius: 50%;
-      font-family: 'icomoon';
-      font-size: 26px;
-      line-height: 20px;
-      opacity: 1;
-      color: black;
-      transition: all ease .3s;
-      &:hover {
-        background: black;
-        color: white;
-      }
-    }
+	@media only screen and (max-width: 40em) {
+	  padding: 15px 0;
+	}
+	li {
+	  @media only screen and (max-width: 40em) {
+		display: inline-block;
+		width: 40px;
+	  } 
+	}
+	li a {
+	  display: block;
+	  background: white;
+	  width: 26px;
+	  height: 26px;
+	  text-align: center;
+	  border-radius: 50%;
+	  font-family: 'icomoon';
+	  font-size: 26px;
+	  line-height: 20px;
+	  opacity: 1;
+	  color: black;
+	  transition: all ease .3s;
+	  &:hover {
+		background: black;
+		color: white;
+	  }
+	}
   }
   .credit {
-    color: black;
-    position: relative;
-    &::after {
-      content: '';
-      left: 0px;
-      bottom: 0px;
-      position: absolute;
-      width: 100%;
-      height: 4px;
-      background: white;
-      opacity: 0;
-      transition: all ease .3s;
-    }
-    &:hover::after {
-      bottom: -10px;
-      opacity: 1;
+	color: black;
+	position: relative;
+	&::after {
+	  content: '';
+	  left: 0px;
+	  bottom: 0px;
+	  position: absolute;
+	  width: 100%;
+	  height: 4px;
+	  background: white;
+	  opacity: 0;
+	  transition: all ease .3s;
+	}
+	&:hover::after {
+	  bottom: -10px;
+	  opacity: 1;
 
-    }
+	}
   }
 
   .icon-logo {
-    color: black;
-    font-size: 70px;
-    line-height: 25px;
-    @media only screen and (max-width: 40em) {
-      margin-left: -5px;
-    }
+	color: black;
+	font-size: 70px;
+	line-height: 25px;
+	@media only screen and (max-width: 40em) {
+	  margin-left: -5px;
+	}
   }
 
   input[type="text"], input[type="email"], input[type="submit"] {
-    background: transparent;
-    border: none;
-    outline: none;
-    box-shadow: none;
-    padding: 0;
-    border-bottom: 2px solid black;
-    float: left;
-    width: 70%;
-    padding: 12px 0 10px 0;
-    height: 44px;
-    font: 16px/20px "llb", sans-serif;
-    &:focus {
-      background: transparent;
-      border-color: black; 
-      color: black; 
-    }
-    &::placeholder {
-      color: black;
-    }
+	background: transparent;
+	border: none;
+	outline: none;
+	box-shadow: none;
+	padding: 0;
+	border-bottom: 2px solid black;
+	float: left;
+	width: 70%;
+	padding: 12px 0 10px 0;
+	height: 44px;
+	font: 16px/20px "llb", sans-serif;
+	&:focus {
+	  background: transparent;
+	  border-color: black; 
+	  color: black; 
+	}
+	&::placeholder {
+	  color: black;
+	}
   }
 
   .response {
-    float: left;
+	float: left;
   }
 
   input[type="submit"] {
-    width: 30%;
-    border-left: 2px solid black;
-    transition: all ease .3s;
-    &:hover {
-      background: black;
-      color: white;
-      cursor: pointer;
-    }
+	width: 30%;
+	border-left: 2px solid black;
+	transition: all ease .3s;
+	&:hover {
+	  background: black;
+	  color: white;
+	  cursor: pointer;
+	}
   }
 
   
 }
+
+
+
+.problem, .principles, .solution, .team, .shop {
+	h4.title {
+		background: red;
+		display: inline-block;
+		padding: 10px 20px;
+		text-transform: uppercase;
+		font-size: 14px;
+		letter-spacing: 1.5px;
+		margin-bottom: 40px;
+		@media only screen and (max-width: 40em) {
+			margin-bottom: 20px;
+		}
+	}
+	.arrow {
+		display: block;
+		width: 25px;
+		height: 25px;
+		// background: red;
+		position: absolute;
+		transform: rotate(45deg);
+		transition: all ease .3s;
+		cursor: pointer;
+		&:hover {
+			opacity: .5;
+		}
+	}
+	.next {
+		border-right: 1px solid black;
+		border-top: 1px solid black;
+	}
+	.prev {
+		border-left: 1px solid black;
+		border-bottom: 1px solid black;
+	}
+	ul, li {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.problem {
+	background: white;
+}
+
+
+.principles {
+	background: rgba(0,0,0,.5);
+	color: white;
+	height: 70vh;
+	position: relative;
+	overflow: hidden;
+	h4.title {
+		background: white;
+	}
+	div.bg {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		z-index: -1;
+	}
+
+	.info {
+		position: absolute;
+		top: 220px;
+		max-width: 450px;
+	}
+	.nav {
+		position: absolute;
+		top: 220px;
+		left: 60%;
+		li {
+
+			a {
+				font: 48px/56px 'llb', sans-serif;
+				color: white; 	
+			}
+		}
+	}
+	.singles {
+		display: none;
+	}
+
+}
+
+
+.solution {
+	background:#ececec;
+	height: 70vh;
+	overflow: hidden;
+	position: relative;
+	h4.title {
+		background: black;
+		color: white;
+	}
+	div.bg {
+		position: absolute;
+		background: red;
+		top: 0px;
+		right: 0px;
+		transition: all $cubic .5s;
+		&.hidden {
+			right: -40px; 
+			opacity: 0;
+			pointer-events: none;
+		}
+	}
+	.medium-5 {
+		margin-top: 80px;
+		position: relative;
+		z-index: 1;
+		transition: all $cubic .5s;
+		&.hidden {
+			margin-left: 40px;
+			opacity: 0;
+			pointer-events: none;
+		}
+	}
+	.next.arrow, .prev.arrow {
+		position: absolute;
+		z-index: 1;
+		right:50px;
+		top: calc(40vh - 15px);
+	}
+	.prev.arrow {
+		right:40px;
+	}
+	ul.nav {
+		position: absolute;
+		top: 223px;
+		opacity: 0;
+		pointer-events: none;
+		margin-left: 40px; 
+		transition: all $cubic .5s;
+		&.active {
+			opacity: 1;
+			pointer-events: auto;
+			position: absolute;
+			margin-left: 0;
+		}
+		li {
+			opacity: .2;
+			transition: all $cubic .5s;
+			&.active {
+				opacity: 1;
+			}
+			a {
+				color: black;
+			}
+		}
+	}
+	ul.singles {
+		opacity: 0;
+		width: 70%;
+		right: 0px;
+		top: 0px;
+		bottom: 0px;
+		position: absolute;
+		transform: translateX(40px);
+		transition: all $cubic .5s;
+		&.active {
+			transform: translateX(0px);
+			opacity: 1;
+			pointer-events: auto;
+		}
+		li {
+			padding-top: 223px;
+			width: 100%;
+			position: absolute;
+			opacity: 1;
+			p {
+				position: relative;
+				z-index: 1;
+				max-width: 350px;
+				transform: translateX(40px);
+				opacity: 0;
+				transition: all $cubic .5s;
+			}
+			div {
+				position: absolute;
+				width: inherit;
+				height: 70vh;
+				top: 0;
+				z-index: 0;
+				right: 0;
+				text-align: right;
+				transform: translateX(40px);
+				opacity: 0;
+				transition: all 1s $cubic .15s;
+				img {
+					height: 100%;
+				}
+			}
+			&.active {
+				opacity: 1;
+				p, div {
+					transform: translateX(0px);
+					opacity: 1;
+				}
+			}
+		}
+
+	}
+
+}
+
+
+.team {
+	@media only screen and (max-width: 40em) { 
+		padding: 30px 20px 20px 20px;
+	}
+	h4.title {
+		background: transparent;
+		border: 1px solid black;
+		color: black;
+	}
+	.row > .row {
+		height: 240px;
+		position: relative;
+		margin-top: 60px;
+		@media only screen and (max-width: 40em) { 
+			margin-top: 0px;
+		}
+		p {
+			padding-right: 100px;
+			@media only screen and (max-width: 40em) { 
+				padding-right: 0;
+			}
+		}
+		.profiles {
+			cursor: pointer;
+
+			li:first-child  {
+				position: absolute;
+				right: 0px;
+				top: 50px;
+				z-index: 1;
+			}
+			li:last-child {
+				position: absolute;
+				top: -150px;
+				left: -50px;
+				z-index: 1;
+			}
+			li:hover {
+				z-index: 2;
+			}
+			li:first-child, li:last-child {
+				@media only screen and (max-width: 40em) { 
+					position: relative;
+					top: 0px;
+					left: 0px;
+					img {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+
+.shop {
+	@media only screen and (max-width: 40em) { 
+		padding: 20px;
+	}
+	h4.title {
+		background: transparent;
+		border: 1px solid black;
+		color: black;
+	}
+	.info {
+		box-sizing: border-box;
+		background: black;
+		padding: 25px 100px 25px 40px;
+		height: 500px;
+		@media only screen and (max-width: 40em) { 
+			height: 300px;
+			padding: 20px;
+		}
+		h4, p, a {
+			color: white;
+		}
+		h4 {
+			margin-bottom: 30px;
+		}
+		.price, .buy {
+			font-family: "llb", sans-serif;
+			background: white;
+			color: black;
+			display: inline-block;
+			padding: 15px 20px;
+			outline: none;
+			font-size: 12px;
+			line-height: 20px;
+			text-transform: uppercase;
+			vertical-align: baseline;
+			margin: 0;
+			letter-spacing: 1px;
+			position: absolute;
+			bottom: 40px;
+			left: 40px;
+			@media only screen and (max-width: 40em) { 
+				left: 20px;
+				bottom: 20px;
+			}
+		}
+		.buy {
+			left: 118px;
+			@media only screen and (max-width: 40em) { 
+				left: 100px;
+			}
+		}
+	}
+
+	.slides {
+		background: black;
+		height: 500px;
+		width: 50%;
+		overflow: hidden;
+		margin: 0;
+		padding: 0;
+		@media only screen and (max-width: 40em) {
+			width: 100%;
+			height: 300px;
+		}
+		&:hover {
+			cursor: pointer;
+		}
+		img {
+			position: absolute;
+			object-fit: cover;
+			width: 100%;
+		}
+		li {
+			height: 100%;
+			opacity: 0;
+			pointer-events: none;
+			margin-left: 20px;
+			transition: all ease .8s;
+			@media only screen and (max-width: 40em) { 
+				margin-left: 0px;
+				margin-top: 20px;
+			}
+		}
+		li.active {
+			opacity: 1;
+			margin-left: 0px;
+			pointer-events: auto;
+			@media only screen and (max-width: 40em) { 
+				margin-top: 0px;
+			}
+		}
+	}
+
+
+}
+
+
+.contact {
+
+}
+
+
 
 
