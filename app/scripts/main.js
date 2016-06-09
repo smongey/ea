@@ -87,9 +87,25 @@ $(window).on('scroll', function(e){
 
 $(window).load( function(){
 	$('.loader').addClass('disable');
+	startSlideshow(5000);
 });
 
 
+function startSlideshow(delay){
+
+	setInterval(function(){
+		// find the active slide, remove active class get next child if there is one and give it active class
+		// if there isnt a next one get the first one and give that and active class
+		if($('.intro .bg li.active').next().length > 0) {
+			$('.intro .bg li.active').removeClass('active').next().addClass('active');
+
+		} else {
+			$('.intro .bg li').removeClass('active');
+			$('.intro .bg li:first-child').addClass('active');
+		}
+	}, delay);
+
+}
 
 
 
@@ -185,6 +201,7 @@ $(document).on('click', '.slides ul li.active', function(){
 	$(this).parent().removeClass('active');
 	$('.problem ul li.first').addClass('active');
 	$('.problem h4.title').empty().append('Problem').removeClass('black');
+	$('.problem').removeClass('white');
 
 }).on('click', '.problem .process .nav li a', function(e){
 

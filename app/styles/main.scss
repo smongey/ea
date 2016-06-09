@@ -29,6 +29,9 @@
 
 $cubic: cubic-bezier(.68,.02,.33,.99);
 
+$grey: #8d8e88;
+
+
 @font-face {
 	font-family: "llb";
 	src:url("../fonts/llb.eot");
@@ -595,6 +598,8 @@ section {
 }
 
 
+
+
 // Footer
 footer {
   padding: 60px 0;
@@ -730,6 +735,7 @@ footer {
 
 
 
+
 .problem, .principles, .solution, .team, .shop {
 	h4.title {
 		background: red;
@@ -772,13 +778,49 @@ footer {
 	}
 }
 
+
+.intro {
+	background: rgba(0,0,0,.5);
+	position: relative;
+	height: 100vh;
+	overflow: hidden;
+	h1, h2 {
+		position: relative;
+		z-index: 1;
+	}
+	.bg {
+		li {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			position: absolute;
+			opacity: 0;
+			z-index: -1;
+			top: 0px;
+			left: 0px;
+			right: 0px;
+			height: 100vh;
+			background-size: cover;
+			background-position: center center;
+			transition: all $cubic 1s;
+			// object-fit: cover;
+			&.active {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+
+
 .problem {
-	background: rgba(121,122,117,1);
+	background: rgba(141,142,137,.8);
 	color: white;
 	height: 90vh;
 	min-height: 500px;
 	position: relative;
 	overflow: hidden;
+	transition: all $cubic .8s;
 	&.white {
 		background: white;
 		color: black;
@@ -801,7 +843,7 @@ footer {
 				position: absolute;
 				z-index: 1;
 				line-height: 55px;
-				top: 210px;
+				top: calc(210px + 10vh);
 				max-width: 600px;
 				color: white;
 				opacity: 0;
@@ -811,7 +853,7 @@ footer {
 			h2 {
 				position: absolute;
 				z-index: 1;
-				top: 210px;
+				top: calc(210px + 10vh);
 				max-width: 600px;
 				text-indent: -17px;
 				font: 32px/40px 'llb', sans-serif;
@@ -833,8 +875,9 @@ footer {
 			    right: 0;
 			    bottom: 0;
 				opacity: 0;
+				z-index: -1;
 				transition: all $cubic .5s;
-				mix-blend-mode: multiply;
+				// mix-blend-mode: multiply;
 			}
 			.next.arrow {
 				right: 50px;
@@ -934,13 +977,18 @@ footer {
 				top: 0;
 				height: 90vh;
 				min-height: 500px;
+				max-width: 40vw;
 				right: 0;
 				z-index: 0;
 				opacity: 0;
 				transform: translateX(100px);
 				transition: all .8s $cubic .2s;
+				background: $grey;
 				img {
-					height: 100%;
+					width: 100%;
+					position: relative;
+					top: 50%;
+					transform: translateY(-50%);
 				}
 			}
 		}
@@ -1035,21 +1083,27 @@ footer {
 				top: 220px;
 				transform: translateX(40px);
 				transition: all .8s $cubic;
+				z-index: 1;
 			}
 			div {
 				position: absolute;
-				background: red;
 				opacity: 0;
 				top: 0;
 				right: 0;
 				height: 70vh;
 				min-height: 500px;
+				max-width: 40vw;
 				text-align: right;
 				transform: translateX(40px);
 				transition: all .8s $cubic .15s;
+				z-index: 0;
+				background: $grey;
 				img {
-					height: 100%;
-					object-fit: cover;
+					position: relative;
+					width: 100%;
+					top: 50%;
+					transform: translateY(-50%);
+					// object-fit: cover;
 				}
 			}
 
@@ -1071,9 +1125,9 @@ footer {
 
 
 .solution {
-	background:#ececec;
-	height: 70vh;
-	min-height: 500px;
+	// background:#ececec;
+	height: 60vh;
+	min-height: 400px;
 	overflow: hidden;
 	position: relative;
 	h4.title {
@@ -1085,6 +1139,9 @@ footer {
 		background: red;
 		top: 0px;
 		right: 0px;
+		bottom: 0px;
+		left: 0%;
+		z-index: -1;
 		transition: all $cubic .5s;
 		&.hidden {
 			right: -40px; 
@@ -1107,7 +1164,7 @@ footer {
 		position: absolute;
 		z-index: 1;
 		right:50px;
-		top: calc(40vh - 15px);
+		top: calc(50% - 15px);
 	}
 	.prev.arrow {
 		right:40px;
@@ -1138,10 +1195,11 @@ footer {
 	}
 	ul.singles {
 		opacity: 0;
-		width: 70%;
+		width: 100%;
 		right: 0px;
 		top: 0px;
 		bottom: 0px;
+		z-index: -1;
 		position: absolute;
 		transform: translateX(40px);
 		transition: all $cubic .5s;
@@ -1156,17 +1214,19 @@ footer {
 			position: absolute;
 			opacity: 1;
 			p {
-				position: relative;
+				position: absolute;
 				z-index: 1;
 				max-width: 350px;
 				transform: translateX(40px);
 				opacity: 0;
+				left: 33%;
 				transition: all $cubic .5s;
 			}
 			div {
+				background-color: #ececec;
 				position: absolute;
-				width: inherit;
-				height: 70vh;
+				width: 110%;
+				height: 60vh;
 				min-height: 500px;
 				top: 0;
 				z-index: 0;
