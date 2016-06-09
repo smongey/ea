@@ -16,7 +16,7 @@ $(document).foundation({
 	  threshold: 0, // how many pixels until the magellan bar sticks, 0 = auto
 	  destination_threshold: 10, // pixels from the top of destination for it to be considered active
 	  throttle_delay: 50, // calculation throttling to increase framerate
-	  fixed_top: 200, // top distance in pixels assigend to the fixed element on scroll
+	  fixed_top: 88, // top distance in pixels assigend to the fixed element on scroll
 	  offset_by_height: true // whether to offset the destination by the expedition height. Usually you want this to be true, unless your expedition is on the side.
 	}
 });
@@ -133,12 +133,6 @@ $(document).on('click', '.slides ul li.active', function(){
 }).on('click', '.solution .nav li a', function(e){
 	
 	e.preventDefault();
-
-
-	// remove all active classes from nav items
-	// add active class to the clicked link
-	// get the index of item clicked
-	// remove active from all slides and find the one at the clicked links index
 	var index = $(this).parent().index();
 
 	if(!$(this).parent().hasClass('active')) {
@@ -146,14 +140,62 @@ $(document).on('click', '.slides ul li.active', function(){
 		$('.solution .nav li').removeClass('active');
 		$(this).parent().addClass('active');
 		$('.solution .singles li').removeClass('active').eq(index).addClass('active');
-		
 	}
 
+}).on('click', '.principles .nav li a', function(e) {
+	e.preventDefault();
+	// l('har har');
+	var index = $(this).parent().index();
+	if(!$('.principles .nav').hasClass('inuse')) {
+		// if menu isnt active
+		$('.principles').addClass('black');
+		$('.principles .nav li').removeClass('active');
+		$(this).parent().parent().addClass('inuse');
+		$(this).parent().addClass('active');
+		$('.principles .info').addClass('hidden');
+		$('.principles .singles li').removeClass('active').eq(index).addClass('active');
+	} else {
+		// if menu is active
+		$('.principles .nav li').removeClass('active');
+		$(this).parent().addClass('active');
+		l(index);
+		$('.principles .singles li').removeClass('active').eq(index).addClass('active');
+	}
+}).on('click', '.principles h4.title', function(){
 
+	$('.principles').removeClass('black');
+	$('.principles .info').removeClass('hidden');
+	$('.principles .nav').removeClass('inuse');
+	$('.principles .singles li, .principles .singles li').removeClass('active')
 
+}).on('click', '.problem .first .next.arrow', function () {
 
+	//l($(this).parent().next());
+	$(this).parent().removeClass('active').next().addClass('active');
+
+}).on('click', '.problem .second .next.arrow', function () {
+	 
+	//l($(this).parent().next());
+	$(this).parent().removeClass('active').next().addClass('active');
+	$('.problem h4.title').empty().append('Process').addClass('black');
+	$('.problem').addClass('white');
+
+}).on('click', '.problem .process .prev.arrow', function() {
+
+	$(this).parent().removeClass('active');
+	$('.problem ul li.first').addClass('active');
+	$('.problem h4.title').empty().append('Problem').removeClass('black');
+
+}).on('click', '.problem .process .nav li a', function(e){
+
+	e.preventDefault();
+	var index = $(this).parent().index();
+	$('.problem .process .nav li').removeClass('active');
+	$(this).parent().addClass('active');
+	$('.problem .content li').removeClass('active').eq(index).addClass('active');
 
 });
+
 
 
 
