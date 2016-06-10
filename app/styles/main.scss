@@ -748,6 +748,7 @@ footer {
 		margin-top: 30px;
 		@media only screen and (max-width: 40em) {
 			margin-bottom: 20px;
+			margin-top: 40px;
 		}
 	}
 	.arrow {
@@ -784,9 +785,26 @@ footer {
 	position: relative;
 	height: 100vh;
 	overflow: hidden;
+	@media only screen and (max-width: 40em) {  
+		background: black;
+		height: 400px;
+		min-height: 400px;
+	}
 	h1, h2 {
 		position: relative;
 		z-index: 1;
+	}
+	.row {
+		@media only screen and (max-width: 40em) {  
+			top: 0px;
+			transform: translateY(0);
+		}
+	}
+	.medium-5, .medium-7 {
+
+		@media only screen and (max-width: 40em) {  
+			margin-top: 40px;
+		}
 	}
 	.bg {
 		li {
@@ -804,6 +822,11 @@ footer {
 			background-position: center center;
 			transition: all $cubic 1s;
 			// object-fit: cover;
+			@media only screen and (max-width: 40em) {  
+				height: 400px;
+				right: inherit;
+				width:100%;
+			}
 			&.active {
 				opacity: 1;
 			}
@@ -821,6 +844,9 @@ footer {
 	position: relative;
 	overflow: hidden;
 	transition: all $cubic .8s;
+	@media only screen and (max-width: 40em) {
+		padding: 0 20px;
+	}
 	&.white {
 		background: white;
 		color: black;
@@ -849,6 +875,10 @@ footer {
 				opacity: 0;
 				transform: translateX(40px);
 				transition: all .7s $cubic .15s;
+				@media only screen and (max-width: 40em) {
+					font: 32px/34px 'llb', sans-serif;
+					top: 170px;
+				}
 			}
 			h2 {
 				position: absolute;
@@ -861,6 +891,12 @@ footer {
 				opacity: 0;
 				transform: translateX(40px);
 				transition: all .7s $cubic .15s;
+				@media only screen and (max-width: 40em) {
+					font: 26px/30px 'llb', sans-serif;
+					top: 170px;
+					max-width: 90%;
+					text-indent: -12px;
+				}
 				span {
 					text-indent: 0px;
 					display: block;
@@ -885,6 +921,11 @@ footer {
 				border-color: white;
 				opacity: 0;
 				transition: all .7s $cubic .15s;
+				@media only screen and (max-width: 40em) {
+					top: inherit;
+					bottom: 60px;
+					right: inherit;
+				}
 			}
 			&.active {
 				.next.arrow {
@@ -931,6 +972,12 @@ footer {
 			left: 50px;
 			top: 40vh;
 			opacity: 0;
+			@media only screen and (max-width: 40em) {
+				top: inherit;
+				bottom: 60px;
+				left: 30px;
+				z-index: 1;
+			}
 		}
 		&.active {
 			opacity: 1;
@@ -942,6 +989,9 @@ footer {
 		opacity: 0;
 		transform: translateX(40px);
 		transition: all .8s $cubic;
+		@media only screen and (max-width: 40em) {
+			top: 120px;
+		}
 		li {
 			a {
 				color: black;
@@ -964,6 +1014,11 @@ footer {
 			right: 0px;
 			padding-top: 220px;
 			pointer-events: none;
+			@media only screen and (max-width: 40em) {
+				width: 100%;
+				height: 100%;
+				padding: 220px 20px 20px 20px;
+			}
 			p {
 				width: 280px;
 				position: relative;
@@ -971,6 +1026,9 @@ footer {
 				opacity: 0;
 				transform: translateX(40px);
 				transition: all .8s $cubic .1s;
+				@media only screen and (max-width: 40em) {
+					width: 105%;
+				}
 			}
 			div {
 				position: absolute;
@@ -984,11 +1042,25 @@ footer {
 				transform: translateX(100px);
 				transition: all .8s $cubic .2s;
 				background: $grey;
+				@media only screen and (max-width: 40em) {
+					top: initial;
+					width: 100%;
+					min-width: 100%;
+					height: 45%;
+				    min-height: 45%;
+					background: $grey;
+					bottom: 0px;
+					overflow: hidden;
+				}
 				img {
 					width: 100%;
 					position: relative;
 					top: 50%;
 					transform: translateY(-50%);
+					@media only screen and (max-width: 40em) {
+					    top: -30%;
+				        transform: scale(.7);
+					}
 				}
 			}
 		}
@@ -1005,12 +1077,22 @@ footer {
 	position: relative;
 	overflow: hidden;
 	transition: all 1s $cubic .15s;
+	@media only screen and (max-width: 40em) {
+		padding: 0 20px;
+		height: 90vh;
+		min-height: 90vh;
+	}
+
 	&.black {
 		background: rgba(0,0,0,1);
 	}
 	h4.title {
 		background: white;
 		cursor: pointer;
+		@media only screen and (max-width: 40em) {
+			position: relative;
+			z-index: 1;
+		}
 	}
 	div.bg {
 		position: absolute;
@@ -1032,6 +1114,9 @@ footer {
 		transform: translateX(0px);
 		opacity: 1;
 		transition: all $cubic .5s;
+		@media only screen and (max-width: 40em) {
+			top: 120px;
+		}
 		&.hidden {
 			transform: translateX(-450px);
 			opacity: 0;
@@ -1042,6 +1127,12 @@ footer {
 		top: 210px;
 		margin-left: 55%;
 		transition: all $cubic .5s;
+		@media only screen and (max-width: 40em) {
+			margin-left: 0;
+			top: initial;
+			bottom: 50px;
+			z-index: 1;
+		}
 		li {
 			a {
 				font: 48px/56px 'llb', sans-serif;
@@ -1073,6 +1164,9 @@ footer {
 		width: 67%;
 		right: 0px;
 		pointer-events: none;
+		@media only screen and (max-width: 40em) {
+			width: 100%;	
+		}
 		li {
 			pointer-events: none;
 			// position: absolute;
@@ -1084,6 +1178,10 @@ footer {
 				transform: translateX(40px);
 				transition: all .8s $cubic;
 				z-index: 1;
+				@media only screen and (max-width: 40em) {
+					max-width: 100%; 
+					padding: 20px;
+				}
 			}
 			div {
 				position: absolute;
@@ -1098,6 +1196,12 @@ footer {
 				transition: all .8s $cubic .15s;
 				z-index: 0;
 				background: $grey;
+				@media only screen and (max-width: 40em) {
+					max-width: 70%;
+					height: 400px;
+					min-height: 400px;
+
+				}
 				img {
 					position: relative;
 					width: 100%;
