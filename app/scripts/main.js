@@ -88,17 +88,15 @@ $(window).on('scroll', function(e){
 $(window).load( function(){
 	$('.loader').addClass('disable');
 	startSlideshow(5000);
+	fadeProblem(5000);
 });
 
 
 function startSlideshow(delay){
 
 	setInterval(function(){
-		// find the active slide, remove active class get next child if there is one and give it active class
-		// if there isnt a next one get the first one and give that and active class
 		if($('.intro .bg li.active').next().length > 0) {
 			$('.intro .bg li.active').removeClass('active').next().addClass('active');
-
 		} else {
 			$('.intro .bg li').removeClass('active');
 			$('.intro .bg li:first-child').addClass('active');
@@ -107,7 +105,13 @@ function startSlideshow(delay){
 
 }
 
+function fadeProblem(delay){
+	setInterval(function(){
 
+		$('li.prob > div').toggleClass('active');
+
+	}, delay);
+}
 
 $(document).on('click', '.slides ul li.active', function(){
 
@@ -184,24 +188,56 @@ $(document).on('click', '.slides ul li.active', function(){
 	$('.principles .nav').removeClass('inuse');
 	$('.principles .singles li, .principles .singles li').removeClass('active')
 
+}).on('click', '.solution .nav li a', function(e) {
+	e.preventDefault();
+	// l('har har');
+	var index = $(this).parent().index();
+	if(!$('.solution .nav').hasClass('inuse')) {
+		// if menu isnt active
+		$('.solution').addClass('black');
+		$('.solution .nav li').removeClass('active');
+		$(this).parent().parent().addClass('inuse');
+		$(this).parent().addClass('active');
+		$('.solution .info').addClass('hidden');
+		$('.solution .singles li').removeClass('active').eq(index).addClass('active');
+	} else {
+		// if menu is active
+		$('.solution .nav li').removeClass('active');
+		$(this).parent().addClass('active');
+		l(index);
+		$('.solution .singles li').removeClass('active').eq(index).addClass('active');
+	}
+}).on('click', '.solution h4.title', function(){
+
+	$('.solution').removeClass('black');
+	$('.solution .info').removeClass('hidden');
+	$('.solution .nav').removeClass('inuse');
+	$('.solution .singles li, .principles .singles li').removeClass('active')
+
 }).on('click', '.problem .first .next.arrow', function () {
 
 	//l($(this).parent().next());
 	$(this).parent().removeClass('active').next().addClass('active');
 
-}).on('click', '.problem .second .next.arrow', function () {
+}).on('click', '.problem a.process', function (e) {
 	 
-	//l($(this).parent().next());
-	$(this).parent().removeClass('active').next().addClass('active');
+	e.preventDefault();
+
+	// l($(this).parent().parent().parent());
+	$(this).parent().parent().parent().removeClass('active').next().addClass('active');
 	$('.problem h4.title').empty().append('Process').addClass('black');
 	$('.problem').addClass('white');
 
-}).on('click', '.problem .process .prev.arrow', function() {
 
-	$(this).parent().removeClass('active');
-	$('.problem ul li.first').addClass('active');
-	$('.problem h4.title').empty().append('Problem').removeClass('black');
-	$('.problem').removeClass('white');
+
+}).on('click', '.problem h4.title.black', function (e) {
+
+	e.preventDefault();
+	$('li.process').removeClass('active');
+	$('li.prob').addClass('active');
+	//.parent().parent().parent().removeClass('active').next().addClass('active');
+	$(this).empty().append('Problem').removeClass('black');
+	$('section.problem').removeClass('white');
 
 }).on('click', '.problem .process .nav li a', function(e){
 
@@ -212,6 +248,7 @@ $(document).on('click', '.slides ul li.active', function(){
 	$('.problem .content li').removeClass('active').eq(index).addClass('active');
 
 });
+
 
 
 

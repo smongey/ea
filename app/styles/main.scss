@@ -43,13 +43,8 @@ $grey: #8d8e88;
 	font-style: normal;
 }
 
-// $phone: only screen and (max-width: 40em);
-
 .icon-facebook:before {
   content: "\e600";
-}
-.icon-kickstarter:before {
-  content: "\e601";
 }
 .icon-logo:before {
   content: "\e602";
@@ -60,7 +55,6 @@ $grey: #8d8e88;
 .icon-twitter:before {
   content: "\e604";
 }
-
 
 .browserupgrade {
   margin: 0.2em 0;
@@ -180,49 +174,17 @@ body, h1, h2, h3, h4, h5, h6 {
 
 
 section {
-
   padding: 60px 0;
-  
   @media only screen and (max-width: 40em) {
 	padding: 40px 0;
   }  
-
-
   .medium-5 {
 	h2 {
 	  line-height: 1em;
 	  margin-bottom: 50px;
 	}
   }
-
 }
-
-.title-block {
-  display: inline-block;
-  background: white;
-  padding: 12px 15px 10px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font: $subhead;
-  margin-bottom: 50px;
-
-  .the-chair & {
-	border: 1px solid #ccc;
-	color: #999;
-  }
-  .supporters & {
-	border: 1px solid #ccc;
-	color: #999;
-  }
-  .design & {
-	color: #999;
-  }
-  .kickstarter & {
-	color: black;
-  }
-}
-
-
 
 
 // Home
@@ -280,275 +242,6 @@ section {
 
 }
 
-.design {
-  background: #8d8e89 url(../img/design.jpg) center right no-repeat;
-  background-size: 60%;
-  min-height: 100%;
-  padding-top: 12vh;
-  @media only screen and (max-width: 40em) {
-	padding-top: 30px;
-	background-size: 100%;
-  }
-  h2 {
-	font-size: 46px;
-	line-height: 50px;
-	margin-bottom: 50px;
-	color: white;
-	@media only screen and (max-width: 40em) {
-	  font-size: 28px;
-	  line-height: 36px;
-	}
-  }
-  p {
-	padding-right: 120px;
-	color: white;
-
-	@media only screen and (max-width: 40em) {
-	  padding-right: 0px;
-	}
-  }
-  .videolink {
-	position: relative;
-	width: 150px;
-	height: 90px;
-	margin-top: 40px;
-	img {
-	  opacity: .4;
-	  transition: all ease .3s;
-	}
-	.icon-playbutton {
-	  position: absolute;
-	  left: 50%;
-	  top: 50%;
-	  transform: translate(-50%, -50%);
-	  font-size: 100px;
-	  color: white;
-	  transition: all ease .3s;
-	}
-	&:hover {
-	  cursor: pointer;
-	  img {
-		opacity: 1;
-	  }
-	  .icon-playbutton {
-		transform: translate(-50%, -50%) scale(1.2);
-		opacity: 0;
-	  }
-	}
-  }
-}
-
-.the-chair {
-  min-height: 90%;
-  padding-top: 12vh;
-  @media only screen and (max-width: 40em) {
-	padding-top: 30px;
-  }
-  .features {
-	padding: 5%;
-	position: relative;
-	// background: grey;
-	height: 600px;
-	min-width: 500px;
-	@media only screen and (max-width: 40em) {
-	  padding: 0;
-	  min-width: inherit;
-	  height: inherit;
-	}
-  }
-  p {
-	padding-right: 50px;
-	color: #999;
-
-	@media only screen and (max-width: 40em) {
-	  padding-right: 0px;
-	}
-  }
-
-  .one, .two, .three {
-	position: absolute;
-
-	@media only screen and (max-width: 40em) {
-	  display: none;
-	}
-	span {
-	  position: absolute;
-	  display: block;
-	  width: 30px;
-	  height: 30px;
-	  background: black;
-	  color: white;
-	  border-radius: 100%;
-	  text-align: center;
-	  padding-top: 5px;
-	  z-index: 1;
-	  &::after, &::before {
-		content: ''; 
-	  }
-
-	}
-
-	p {
-	  display: block;
-	  width: 200px;
-	  height: inherit;
-	  padding: 10px 20px 10px 12px;
-	  background: #e6e6e6;
-	  color: black;
-	  position: absolute;
-	  right: -15px;
-	  margin-top: -45px;
-	  opacity: 0;
-	  transition: all ease .3s;
-	}
-	&:hover {
-	  p {
-		opacity: 1;
-	  }
-	}
-  }
-
-  .one { left: 30%; top: 20%; }
-  .two { left: 65%; top: 45%; }
-  .three { left: 40%; top: 60%; }
-
-
-  .one p {  }
-  .two p {  }
-  .three p {  }
-
-
-
-}
-
-
-.kickstarter {
-  min-height: 70%;
-  background: black;
-  padding-top: 10vh;
-  @media only screen and (max-width: 40em) {
-	padding-top: 30px;
-  }
-  h2, p, a {
-	color: white;
-  }
-  h2 span {
-	color: grey;
-  }
-}
-
-.kickstartervideo {
-  position: relative;
-  margin-top: 20px;
-  img {
-	opacity: .4;
-	transition: all ease .3s;
-  }
-  .icon-playbutton {
-	position: absolute;
-	font-size: 140px;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	transition: all ease .3s;
-  }
-  &:hover {
-	img {
-	  opacity: .8;
-	}
-	.icon-playbutton {
-	  opacity: 0;
-	}
-  }
-}
-
-.supporters {
-  min-height: 60%;
-  padding-top: 12vh;
-  @media only screen and (max-width: 40em) {
-	padding-top: 30px;
-  }
-  p { 
-	padding-right: 60px;
-	@media only screen and (max-width: 40em) {
-	  padding-right: 0px;
-	}
-  }
-  .medium-block-grid-3 {
-	margin-top: 20px;
-	li:nth-child(4) {
-	  margin-left: 100px;
-
-	  @media only screen and (max-width: 40em) {
-		margin-left: 0px;
-	  }
-	}
-  }
-}
-
-.overlay, .overlaytwo {
-  position: fixed;
-  z-index: 9999;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  text-align: center;
-  background: rgba(0,0,0,.9);
-  pointer-events: auto;
-  transition: all ease .3s;
-  transform: scale(1);
-  &.inactive {
-	opacity: 0;
-	pointer-events: none;
-	transform: scale(1.1) translateY(-2%);
-  }
-  iframe {
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	max-width: 800px;
-	width: 100%;
-  }
-  .close {
-	position: absolute;
-	display: block;
-	top: 5%;
-	right: 5%;
-	width: 30px;
-	height: 30px;
-	z-index: 9999;
-	cursor: pointer;
-	  transition: all ease .3s;
-	&:after, &:before {
-	  content: '';
-	  position: absolute;
-	  width: 100%;
-	  height: 2px;
-	  background: white;
-	  top: 50%;
-	  left: 0%;
-	  transform-origin: 50% 50%;
-	  transform: rotate(45deg);
-	  transition: all ease .3s;
-	}
-	&:before {
-	  transform: rotate(135deg);
-	}
-	&:hover {
-	  &:after {
-		transform: rotate(45deg) scaleY(3);
-		transition: all ease .3s;
-	  }
-	  &:before {
-		transform: rotate(135deg) scaleY(3);
-		transition: all ease .3s;
-	  }
-	}
-  }
-}
-
 .loader {
   position: fixed;
   background: rgba(0,0,0,.8);
@@ -598,144 +291,6 @@ section {
 }
 
 
-
-
-// Footer
-footer {
-  padding: 60px 0;
-  background: #e6e6e6;
-  
-  p {
-	color: black;
-	a {
-	  position: relative;
-	  color: black;
-	  &:hover {
-		color:black;
-
-	  }
-	  &::after {
-		background: black;
-		content: ' ';
-		left: 0px;
-		bottom: 0px;
-		position: absolute;
-		width: 100%;
-		height: 4px;
-		background: white;
-		opacity: 0;
-		transition: all ease .3s;
-	  }
-	  &:hover::after {
-		bottom: -10px;
-		opacity: 1;
-
-	  }
-	}
-  }
-
-  .social  {
-	@media only screen and (max-width: 40em) {
-	  padding: 15px 0;
-	}
-	li {
-	  @media only screen and (max-width: 40em) {
-		display: inline-block;
-		width: 40px;
-	  } 
-	}
-	li a {
-	  display: block;
-	  background: white;
-	  width: 26px;
-	  height: 26px;
-	  text-align: center;
-	  border-radius: 50%;
-	  font-family: 'icomoon';
-	  font-size: 26px;
-	  line-height: 20px;
-	  opacity: 1;
-	  color: black;
-	  transition: all ease .3s;
-	  &:hover {
-		background: black;
-		color: white;
-	  }
-	}
-  }
-  .credit {
-	color: black;
-	position: relative;
-	&::after {
-	  content: '';
-	  left: 0px;
-	  bottom: 0px;
-	  position: absolute;
-	  width: 100%;
-	  height: 4px;
-	  background: white;
-	  opacity: 0;
-	  transition: all ease .3s;
-	}
-	&:hover::after {
-	  bottom: -10px;
-	  opacity: 1;
-
-	}
-  }
-
-  .icon-logo {
-	color: black;
-	font-size: 70px;
-	line-height: 25px;
-	@media only screen and (max-width: 40em) {
-	  margin-left: -5px;
-	}
-  }
-
-  input[type="text"], input[type="email"], input[type="submit"] {
-	background: transparent;
-	border: none;
-	outline: none;
-	box-shadow: none;
-	padding: 0;
-	border-bottom: 2px solid black;
-	float: left;
-	width: 70%;
-	padding: 12px 0 10px 0;
-	height: 44px;
-	font: 16px/20px "llb", sans-serif;
-	&:focus {
-	  background: transparent;
-	  border-color: black; 
-	  color: black; 
-	}
-	&::placeholder {
-	  color: black;
-	}
-  }
-
-  .response {
-	float: left;
-  }
-
-  input[type="submit"] {
-	width: 30%;
-	border-left: 2px solid black;
-	transition: all ease .3s;
-	&:hover {
-	  background: black;
-	  color: white;
-	  cursor: pointer;
-	}
-  }
-
-  
-}
-
-
-
-
 .problem, .principles, .solution, .team, .shop {
 	h4.title {
 		background: red;
@@ -776,6 +331,26 @@ footer {
 		list-style-type: none;
 		margin: 0;
 		padding: 0;
+	}
+	ul.nav {
+		transition: all $cubic .3s;
+	}
+	ul.nav li {
+		transition: all $cubic .3s;
+	}
+	ul.nav:hover {
+		li {
+			opacity: .2;
+		}
+		li a {
+			opacity: 1;
+		}
+	}
+	ul.nav:hover li:hover {
+		opacity: 1;
+	}
+	ul.nav:hover li:hover a {
+		opacity: 1;
 	}
 }
 
@@ -860,127 +435,166 @@ footer {
 		&.black {
 			background: black;
 			color: white;
+			cursor: pointer;
+			// &:hover {
+			// 	background: white;
+			// 	color: black;
+			// }
 		}
 	}
 	.row > ul {
-		& > li {
+		li.prob {
+			opacity: 0;
 			pointer-events: none;
-			h1 {
+		}
+		li.prob.active {
+			opacity: 1;
+			pointer-events: auto;
+			& > div {
 				position: absolute;
-				z-index: 1;
-				line-height: 55px;
-				top: calc(210px + 10vh);
-				max-width: 600px;
-				color: white;
-				opacity: 0;
-				transform: translateX(40px);
-				transition: all .7s $cubic .15s;
-				@media only screen and (max-width: 40em) {
-					font: 32px/34px 'llb', sans-serif;
-					top: 170px;
+				pointer-events: none;
+				top: 0px;
+				bottom: 0px;
+				left: 0px;
+				right: 0px;
+				& > div {
+					max-width: 62.5em;
+					margin: 0 auto;
 				}
 			}
-			h2 {
-				position: absolute;
-				z-index: 1;
-				top: calc(210px + 10vh);
-				max-width: 600px;
-				text-indent: -17px;
-				font: 32px/40px 'llb', sans-serif;
-				color: white;
-				opacity: 0;
-				transform: translateX(40px);
-				transition: all .7s $cubic .15s;
-				@media only screen and (max-width: 40em) {
-					font: 26px/30px 'llb', sans-serif;
-					top: 170px;
-					max-width: 90%;
-					text-indent: -12px;
-				}
-				span {
-					text-indent: 0px;
-					display: block;
-					opacity: .5;
-					margin-top: 20px;
-				}
+			& > div.active {
+				pointer-events: auto;
+			}
+		}
+
+		h1 {
+			position: absolute;
+			z-index: 1;
+			line-height: 55px;
+			top: calc(210px + 10vh);
+			max-width: 600px;
+			color: white;
+			opacity: 0;
+			transform: translateX(40px);
+			transition: all .7s $cubic .15s;
+			@media only screen and (max-width: 40em) {
+				font: 32px/34px 'llb', sans-serif;
+				top: 170px;
+			}
+		}
+		h2 {
+			position: absolute;
+			z-index: 1;
+			top: calc(210px + 10vh);
+			max-width: 600px;
+			text-indent: -17px;
+			font: 32px/40px 'llb', sans-serif;
+			color: white;
+			opacity: 0;
+			transform: translateX(40px);
+			transition: all .7s $cubic .15s;
+			@media only screen and (max-width: 40em) {
+				font: 26px/30px 'llb', sans-serif;
+				top: 170px;
+				max-width: 90%;
+				text-indent: -12px;
+			}
+			span {
+				text-indent: 0px;
+				display: block;
+				opacity: .5;
+				margin-top: 20px;
+			}
+		}
+		a.process {
+			position: absolute;
+			bottom: 100px;
+			background: black;
+			display: inline-block;
+			padding: 10px 20px;
+			text-transform: uppercase;
+			font-size: 14px;
+			z-index: 1;
+			letter-spacing: 1.5px;
+			margin-bottom: 40px;
+			margin-top: 30px;
+			color: white;
+			opacity: 0;
+			pointer-events: none;
+			transition: all $cubic .5s;
+			&:hover {
+				padding: 15px 25px;
+				transform: translate(-5px, 5px);
+			}
+		}
+		.bg {
+			position: absolute;
+			left: 0;
+			top: 0;
+		    right: 0;
+		    bottom: 0;
+			opacity: 0;
+			z-index: -1;
+			transition: all $cubic .5s;
+			// mix-blend-mode: multiply;
+		}
+		div.active div {
+		
+			h1, h2 {
+				opacity: 1;
+				transform: translateX(0px);
+				pointer-events: auto;
 			}
 			.bg {
-				position: absolute;
-				left: 0;
-				top: 0;
-			    right: 0;
-			    bottom: 0;
-				opacity: 0;
-				z-index: -1;
-				transition: all $cubic .5s;
-				// mix-blend-mode: multiply;
+				opacity: 1;
+				pointer-events: auto;
 			}
-			.next.arrow {
-				right: 50px;
-				top: 40vh;
-				border-color: white;
-				opacity: 0;
-				transition: all .7s $cubic .15s;
-				@media only screen and (max-width: 40em) {
-					top: inherit;
-					bottom: 60px;
-					right: inherit;
-				}
+			a.process {
+				opacity: 1;
+				pointer-events: auto;
 			}
-			&.active {
-				.next.arrow {
-					opacity: 1;
-					pointer-events: auto;
-				}
-				h1, h2 {
-					opacity: 1;
-					transform: translateX(0px);
-					pointer-events: auto;
-				}
-				.bg {
-					opacity: 1;
-					pointer-events: auto;
-				}
-				.prev.arrow {
-					opacity: 1;
-					pointer-events: auto;
-				}
-				ul.nav {
-					opacity: 1;
-					transform: translateX(0px);
-					pointer-events: auto;
-				}
-				ul.content li.active {
-					p {
-						opacity: 1;
-						transform: translateX(0px);
-						transition: all 1s $cubic .2s;
-					}
-					div {
-						opacity: 1;
-						transform: translateX(0px);
-						transition: all 1s $cubic .2s;
-					}
-				}
-			}
+			
 		}
 	}
 	li.process {
 		pointer-events: none;
-		.prev.arrow {
-			border-color: black;
-			left: 50px;
-			top: 40vh;
-			opacity: 0;
-			@media only screen and (max-width: 40em) {
-				top: inherit;
-				bottom: 60px;
-				left: 30px;
-				z-index: 1;
-			}
-		}
 		&.active {
 			opacity: 1;
+		}
+		ul.nav {
+			position: absolute;
+			top: 210px;
+			transition: all $cubic .5s;
+			@media only screen and (max-width: 40em) {
+				margin-left: 0;
+				top: initial;
+				bottom: 50px;
+				z-index: 1;
+			}
+			li {
+				a {
+					font: 48px/56px 'llb', sans-serif;
+					color: black; 	
+					transition: all $cubic .5s;
+					cursor: pointer;
+				}
+				&.active {
+
+				}
+			}
+		}	
+	}
+	li.process.active {
+		ul.nav {
+			opacity: 1;
+			transform: translateX(0px);
+			pointer-events: auto;
+		}
+		ul.content li.active {
+			p, div {
+				opacity: 1;
+				transform: translateX(0px);
+			}
 		}
 	}
 	ul.nav {
@@ -1000,6 +614,7 @@ footer {
 			&.active {
 				a {
 					opacity: 1;
+					transform: translateX(0px);
 				}
 			}
 			
@@ -1010,7 +625,7 @@ footer {
 		li {
 			position: absolute;
 			top: 0px;
-			width: 67%;
+			width: 64%;
 			right: 0px;
 			padding-top: 220px;
 			pointer-events: none;
@@ -1020,7 +635,7 @@ footer {
 				padding: 220px 20px 20px 20px;
 			}
 			p {
-				width: 280px;
+				width: 270px;
 				position: relative;
 				z-index: 1;
 				opacity: 0;
@@ -1064,12 +679,17 @@ footer {
 				}
 			}
 		}
+		li.active {
+			p {
+				tranform: translateX(0px);
+			}
+		}
 	}
 
 }
 
 
-.principles {
+.principles, .solution {
 	background: rgba(0,0,0,.5);
 	color: white;
 	height: 70vh;
@@ -1161,7 +781,7 @@ footer {
 	.singles {
 		position: absolute;
 		top: 0px;
-		width: 67%;
+		width: 64%;
 		right: 0px;
 		pointer-events: none;
 		@media only screen and (max-width: 40em) {
@@ -1229,16 +849,7 @@ footer {
 
 
 .solution {
-	// background:#ececec;
-	height: 60vh;
-	min-height: 400px;
-	overflow: hidden;
-	position: relative;
-	@media only screen and (max-width: 40em) {
-		padding: 0 20px;
-		height: 90vh;
-		min-height: 90vh;
-	}
+	background: rgba(255,255,255,.5);
 	h4.title {
 		background: black;
 		color: white;
@@ -1246,160 +857,16 @@ footer {
 			margin-top: 20px;
 		}
 	}
-	div.bg {
-		position: absolute;
-		background: red;
-		top: 0px;
-		right: 0px;
-		bottom: 0px;
-		left: 0%;
-		z-index: -1;
-		transition: all $cubic .5s;
-		@media only screen and (max-width: 40em) {
-			bottom: 55%;
-			background-size: contain !important;
-		}
-		&.hidden {
-			right: -40px; 
-			opacity: 0;
-			pointer-events: none;
-		}
+	p, .nav li a {
+		color: black;
 	}
-	.medium-5 {
-		margin-top: 55px;
-		position: relative;
-		z-index: 1;
-		transition: all $cubic .5s;
-		@media only screen and (max-width: 40em) {
-			margin-top: 0px;
-			position: absolute;
-			top:50%;
-		}
-		&.hidden {
-			margin-left: 40px;
-			opacity: 0;
-			pointer-events: none;
-		}
+	&.black {
+		background: #ececec;
 	}
-	.next.arrow, .prev.arrow {
-		position: absolute;
-		z-index: 1;
-		right:50px;
-		top: calc(50% - 15px);
-		@media only screen and (max-width: 40em) {
-			right: initial;
-			top: initial;
-			bottom: 30px;
-		}
+	.singles li div {
+		background: #ececec;
 	}
-	.prev.arrow {
-		right:40px;
-		@media only screen and (max-width: 40em) {
-			right: initial;
-		}
-	}
-	ul.nav {
-		position: absolute;
-		top: 223px;
-		opacity: 0;
-		pointer-events: none;
-		margin-left: 40px; 
-		transition: all $cubic .5s;
-		@media only screen and (max-width: 40em) {
-			top: initial;
-			bottom: 90px;
-		}
-
-		&.active {
-			opacity: 1;
-			pointer-events: auto;
-			position: absolute;
-			margin-left: 0;
-		}
-		li {
-			opacity: .2;
-			transition: all $cubic .5s;
-			&.active {
-				opacity: 1;
-			}
-			a {
-				color: black;
-			}
-		}
-	}
-	ul.singles {
-		opacity: 0;
-		width: 100%;
-		right: 0px;
-		top: 0px;
-		bottom: 0px;
-		z-index: -1;
-		position: absolute;
-		transform: translateX(40px);
-		transition: all $cubic .5s;
-		&.active {
-			transform: translateX(0px);
-			opacity: 1;
-			pointer-events: auto;
-		}
-		li {
-			padding-top: 223px;
-			width: 100%;
-			position: absolute;
-			opacity: 1;
-			@media only screen and (max-width: 40em) {
-				padding-top: 300px;	
-			}
-			p {
-				position: absolute;
-				z-index: 1;
-				max-width: 350px;
-				transform: translateX(40px);
-				opacity: 0;
-				left: 33%;
-				transition: all $cubic .5s;
-				@media only screen and (max-width: 40em) {
-					margin-top: 20px;
-					max-width: 100%;
-					left: 0px;
-					padding: 0 20px;
-				}
-			}
-			div {
-				background-color: #ececec;
-				position: absolute;
-				width: 110%;
-				height: 60vh;
-				min-height: 500px;
-				top: 0;
-				z-index: 0;
-				right: 0;
-				text-align: right;
-				transform: translateX(40px);
-				opacity: 0;
-				transition: all 1s $cubic .15s;
-				@media only screen and (max-width: 40em) {
-					height: initial;
-					min-height: initial;
-					bottom: 0px;
-				}
-				img {
-					height: 100%;
-				}
-			}
-			&.active {
-				opacity: 1;
-				p, div {
-					transform: translateX(0px);
-					opacity: 1;
-				}
-			}
-		}
-
-	}
-
 }
-
 
 .team {
 	@media only screen and (max-width: 40em) { 
@@ -1561,10 +1028,135 @@ footer {
 }
 
 
-.contact {
 
+// Footer
+footer {
+  padding: 60px 0;
+  background: #e6e6e6;
+  
+  p {
+	color: black;
+	a {
+	  position: relative;
+	  color: black;
+	  &:hover {
+		color:black;
+
+	  }
+	  &::after {
+		background: black;
+		content: ' ';
+		left: 0px;
+		bottom: 0px;
+		position: absolute;
+		width: 100%;
+		height: 4px;
+		background: white;
+		opacity: 0;
+		transition: all ease .3s;
+	  }
+	  &:hover::after {
+		bottom: -10px;
+		opacity: 1;
+
+	  }
+	}
+  }
+
+  .social  {
+	@media only screen and (max-width: 40em) {
+	  padding: 15px 0;
+	}
+	li {
+	  @media only screen and (max-width: 40em) {
+		display: inline-block;
+		width: 40px;
+	  } 
+	}
+	li a {
+	  display: block;
+	  background: white;
+	  width: 26px;
+	  height: 26px;
+	  text-align: center;
+	  border-radius: 50%;
+	  font-family: 'icomoon';
+	  font-size: 26px;
+	  line-height: 20px;
+	  opacity: 1;
+	  color: black;
+	  transition: all ease .3s;
+	  &:hover {
+		background: black;
+		color: white;
+	  }
+	}
+  }
+  .credit {
+	color: black;
+	position: relative;
+	&::after {
+	  content: '';
+	  left: 0px;
+	  bottom: 0px;
+	  position: absolute;
+	  width: 100%;
+	  height: 4px;
+	  background: white;
+	  opacity: 0;
+	  transition: all ease .3s;
+	}
+	&:hover::after {
+	  bottom: -10px;
+	  opacity: 1;
+
+	}
+  }
+
+  .icon-logo {
+	color: black;
+	font-size: 70px;
+	line-height: 25px;
+	@media only screen and (max-width: 40em) {
+	  margin-left: -5px;
+	}
+  }
+
+  input[type="text"], input[type="email"], input[type="submit"] {
+	background: transparent;
+	border: none;
+	outline: none;
+	box-shadow: none;
+	padding: 0;
+	border-bottom: 2px solid black;
+	float: left;
+	width: 70%;
+	padding: 12px 0 10px 0;
+	height: 44px;
+	font: 16px/20px "llb", sans-serif;
+	&:focus {
+	  background: transparent;
+	  border-color: black; 
+	  color: black; 
+	}
+	&::placeholder {
+	  color: black;
+	}
+  }
+
+  .response {
+	float: left;
+  }
+
+  input[type="submit"] {
+	width: 30%;
+	border-left: 2px solid black;
+	transition: all ease .3s;
+	&:hover {
+	  background: black;
+	  color: white;
+	  cursor: pointer;
+	}
+  }
 }
-
-
-
 
