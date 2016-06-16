@@ -51,7 +51,8 @@ $('.close').on('click', function(){
 
 
 
-var introHeight = $(window).height();
+var introHeight = $(window).height(),
+	slidesInUse = false;
 
 $(window).on('scroll', function(e){
 	if(!mobileAndTabletcheck()){
@@ -89,6 +90,7 @@ $(window).load( function(){
 	$('.loader').addClass('disable');
 	startSlideshow(5000);
 	fadeProblem(5000);
+	autoSlides(4000);
 });
 
 
@@ -114,6 +116,18 @@ function fadeProblem(delay){
 }
 
 $(document).on('click', '.slides ul li.active', function(){
+
+	var session = setTimeout(function() {
+		slidesInUse = false;
+		l(slidesInUse);
+	}, 5000);
+
+	if(slidesInUse === true) {
+		slidesInUse = true;
+		clearTimeout(session);
+	} else {
+		slidesInUse = true;
+	}
 
 	if($(this).next().length == 0) {
 		$('.slides ul li').removeClass('active');
@@ -221,13 +235,12 @@ $(document).on('click', '.slides ul li.active', function(){
 
 }).on('click', '.problem a.process', function (e) {
 	 
-	e.preventDefault();
 
+	e.preventDefault();
 	// l($(this).parent().parent().parent());
 	$(this).parent().parent().parent().removeClass('active').next().addClass('active');
 	$('.problem h4.title').empty().append('Process').addClass('black');
 	$('.problem').addClass('white');
-
 
 
 }).on('click', '.problem h4.title.black', function (e) {
@@ -243,6 +256,11 @@ $(document).on('click', '.slides ul li.active', function(){
 
 	e.preventDefault();
 	var index = $(this).parent().index();
+	$('.problem li.prob').removeClass('active');
+	$('.problem li.process').addClass('active');
+	$('.problem').addClass('white');
+	$('.problem h4.title').empty().append('Process').addClass('black');
+
 	$('.problem .process .nav li').removeClass('active');
 	$(this).parent().addClass('active');
 	$('.problem .content li').removeClass('active').eq(index).addClass('active');
@@ -251,7 +269,20 @@ $(document).on('click', '.slides ul li.active', function(){
 
 
 
-
+function autoSlides(delay) {
+	var slides = $('.slides ul');
+	setInterval(function() {
+		if(slidesInUse == false) {
+			l($('.slides ul li.active').next().length);
+			if($('.slides ul li.active').next().length == 0) {
+				$('.slides ul li').removeClass('active');
+				$('.slides ul li:first-child').addClass('active');
+			} else {
+				$('.slides ul li.active').removeClass('active').next().addClass('active');
+			}
+		}
+	}, delay);
+}
 
 
 

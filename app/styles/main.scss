@@ -94,9 +94,15 @@ body, h1, h2, h3, h4, h5, h6 {
 	  color: white;
 	}
   }
-  .small-block-grid-4 {
-	display: flex;
-	li { flex: 1; }
+  .menu-items {
+	// display: flex;
+	// justify-content: space-between;
+	li { 
+		display: inline-block;
+		padding: 0 20px 0 0;
+		// width: ;
+		// flex: 1;
+	}
   }
 
   .header-logo {
@@ -471,7 +477,7 @@ section {
 			position: absolute;
 			z-index: 1;
 			line-height: 55px;
-			top: calc(210px + 10vh);
+			top: 210px;
 			max-width: 600px;
 			color: white;
 			opacity: 0;
@@ -485,7 +491,7 @@ section {
 		h2 {
 			position: absolute;
 			z-index: 1;
-			top: calc(210px + 10vh);
+			top: 210px;
 			max-width: 600px;
 			text-indent: -17px;
 			font: 32px/40px 'llb', sans-serif;
@@ -589,6 +595,16 @@ section {
 			opacity: 1;
 			transform: translateX(0px);
 			pointer-events: auto;
+			margin-left: 0px;
+			li {
+				opacity: .2;
+			}
+			li.active {
+				opacity: 1;
+			}
+			li a, li.active a {
+				color: black !important;
+			}
 		}
 		ul.content li.active {
 			p, div {
@@ -600,21 +616,25 @@ section {
 	ul.nav {
 		position: absolute;
 		top: 220px;
-		opacity: 0;
-		transform: translateX(40px);
+		opacity: 1;
+		margin-left: 55%;
+		transform: translateX(0px);
 		transition: all .8s $cubic;
 		@media only screen and (max-width: 40em) {
 			top: 120px;
 		}
 		li {
 			a {
-				color: black;
-				opacity: .2;
+				color: white !important;
+				// opacity: .2;
+				pointer-events: auto;
 			}
 			&.active {
 				a {
+					color: white !important;
 					opacity: 1;
 					transform: translateX(0px);
+					pointer-events: auto;
 				}
 			}
 			
@@ -1004,6 +1024,7 @@ section {
 			pointer-events: none;
 			margin-left: 20px;
 			transition: all ease .8s;
+			z-index: 0;
 			@media only screen and (max-width: 40em) { 
 				margin-left: 0px;
 				margin-top: 20px;
@@ -1018,6 +1039,7 @@ section {
 			opacity: 1;
 			margin-left: 0px;
 			pointer-events: auto;
+			z-index: 1;
 			@media only screen and (max-width: 40em) { 
 				margin-top: 0px;
 			}
@@ -1061,6 +1083,15 @@ footer {
 
 	  }
 	}
+  }
+
+  .copyright {
+  	width: 270px;
+  	opacity: .5;
+  	margin-top: 20px;
+  	p {
+	  	font: 14px/18px 'llb', sans-serif;
+  	}
   }
 
   .social  {
