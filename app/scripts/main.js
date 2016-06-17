@@ -273,7 +273,7 @@ function autoSlides(delay) {
 	var slides = $('.slides ul');
 	setInterval(function() {
 		if(slidesInUse == false) {
-			l($('.slides ul li.active').next().length);
+			//l($('.slides ul li.active').next().length);
 			if($('.slides ul li.active').next().length == 0) {
 				$('.slides ul li').removeClass('active');
 				$('.slides ul li:first-child').addClass('active');
