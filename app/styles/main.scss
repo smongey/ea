@@ -345,7 +345,7 @@ section {
 		padding: 0;
 	}
 	ul.nav {
-		transition: all $cubic .3s;
+		transition: all $cubic .7s;
 	}
 	ul.nav li {
 		transition: all $cubic .3s;
@@ -581,7 +581,7 @@ section {
 		ul.nav {
 			position: absolute;
 			top: 210px;
-			transition: all $cubic .5s;
+			transition: all $cubic .7s;
 			@media only screen and (max-width: 40em) {
 				margin-left: 0;
 				top: initial;
